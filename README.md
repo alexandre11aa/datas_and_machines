@@ -2,4 +2,6 @@
 
 [Agrupamento com K-Means](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/agrupamento_com_k-means.ipynb)
 
+[Numeralização de Variáveis Categóricas](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/numeralizacao_de_variaveis_categoricas.ipynb)
+
 [Substituição por Medidas Centrais](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/substituicao_por_medidas_centrais.ipynb)
