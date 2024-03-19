@@ -1,8 +1,6 @@
 # Processamento de Dados
 
-[Agrupamento com K-Means](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/agrupamento_com_k-means.ipynb)
-
-[Agrupamento com Expectation-Otimization](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/agrupamento_com_expectation-maximization.ipynb)
+[Agrupamento de Dados](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/agrupamento_de_dados.ipynb)
 
 [Numeralização de Variáveis Categóricas](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/numeralizacao_de_variaveis_categoricas.ipynb)
 
