@@ -1,9 +1,9 @@
 # Processamento de Dados
 
-[Agrupamento de Dados](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/agrupamento_de_dados.ipynb)
+[Método 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/numeralizacao_de_variaveis_categoricas.ipynb) Numeralização de Variáveis Categóricas
 
-[Normalização de Dados](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/normalizacao_de_dados.ipynb)
+[Método 2.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/normalizacao_de_dados.ipynb) Normalização de Dados Quantitativos
 
-[Numeralização de Variáveis Categóricas](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/numeralizacao_de_variaveis_categoricas.ipynb)
+[Método 3.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/substituicao_por_medidas_centrais.ipynb) Substituição de Outliers por Medidas Centrais
 
-[Substituição por Medidas Centrais](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/substituicao_por_medidas_centrais.ipynb)
+[Método 4.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/agrupamento_de_dados.ipynb) Agrupamento de Dados Quantitativos
