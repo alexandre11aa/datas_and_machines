@@ -12,4 +12,4 @@
 
 [Método 4.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/agrupamento_de_dados.ipynb) Agrupamento de Dados Quantitativos
 
-[Método 5.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/analises_de_agrupamentos.ipynb) Análises de Agrupamentos
+[Método 5.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/analises_de_agrupamentos.ipynb) Técnicas de Análises de Agrupamentos
