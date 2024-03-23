@@ -1,3 +1,7 @@
+# Ciência de Dados
+
+[Análise 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/obitos_por_fa.ipynb) Predição de Óbitos por Febre Amarela no Brasil
+
 # Processamento de Dados
 
 [Método 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/numeralizacao_de_variaveis_categoricas.ipynb) Numeralização de Variáveis Categóricas
