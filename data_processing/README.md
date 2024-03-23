@@ -1,8 +1,6 @@
-# Ciência de Dados
-
-[Análise 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/obitos_por_fa.ipynb) Predição de Óbitos por Febre Amarela no Brasil
-
 # Processamento de Dados
+
+O processamento de dados refere-se ao conjunto de atividades que são realizadas para transformar dados brutos em informações significativas e úteis. Isso envolve diversas etapas, como coleta, organização, análise, interpretação e apresentação dos dados. O objetivo do processamento de dados é extrair conhecimento, identificar padrões, tomar decisões e resolver problemas com base nos dados disponíveis. Essencialmente, o processamento de dados permite que as organizações obtenham insights valiosos e tomem decisões informadas. Abaixo estão alguns métodos de processamento de dados:
 
 [Método 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/numeralizacao_de_variaveis_categoricas.ipynb) Numeralização de Variáveis Categóricas
 
