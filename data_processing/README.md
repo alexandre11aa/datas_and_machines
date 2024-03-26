@@ -1,9 +1,5 @@
 # Processamento de Dados
 
-O processamento de dados refere-se ao conjunto de atividades que são realizadas para transformar dados brutos em informações significativas e úteis. Isso envolve diversas etapas, como coleta, organização, análise, interpretação e apresentação dos dados. 
-
-Abaixo estão alguns métodos de processamento de dados:
-
 [Método 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/numeralizacao_de_variaveis_categoricas.ipynb) Numeralização de Variáveis Categóricas
 
 [Método 2.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/normalizacao_de_dados.ipynb) Normalização de Dados Quantitativos
