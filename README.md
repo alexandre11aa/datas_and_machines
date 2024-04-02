@@ -1,5 +1,9 @@
 # Ciência de Dados
 
+[Análise 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/titanic.ipynb) Titanic
+
+[Análise 2.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/dont_overfit_ii.ipynb) Dont Overfit II
+
 [Análise 3.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/obitos_por_fa.ipynb) Predição de Óbitos por Febre Amarela no Brasil
 
 [Análise 4.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/digit_recognizer.ipynb) Digit Recognizer
