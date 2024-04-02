@@ -1,6 +1,7 @@
 # Ciência de Dados
 
-[Análise 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/obitos_por_fa.ipynb) Predição de Óbitos por Febre Amarela no Brasil
+[Análise 3.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/obitos_por_fa.ipynb) Predição de Óbitos por Febre Amarela no Brasil
+[Análise 4.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/digit_recognizer.ipynb) Digit Recognizer
 
 # Processamento de Dados
 
