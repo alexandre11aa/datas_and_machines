@@ -1,12 +1,12 @@
 # Estudos
 
-[Análise 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/titanic.ipynb) Titanic
+[Análise 1.](https://github.com/alexandre11aa/notebooks/blob/main/studies/titanic/titanic.ipynb) Titanic
 
-[Análise 2.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/dont_overfit_ii.ipynb) Dont Overfit II
+[Análise 2.](https://github.com/alexandre11aa/notebooks/blob/main/studies/dont_overfit_ii/dont_overfit_ii.ipynb) Dont Overfit II
 
-[Análise 3.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/obitos_por_fa.ipynb) Óbitos por Febre Amarela no Brasil
+[Análise 3.](https://github.com/alexandre11aa/notebooks/blob/main/studies/obitos_por_fa/obitos_por_fa.ipynb) Óbitos por Febre Amarela no Brasil
 
-[Análise 4.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/digit_recognizer.ipynb) Digit Recognizer
+[Análise 4.](https://github.com/alexandre11aa/notebooks/blob/main/studies/digit_recognizer/digit_recognizer.ipynb) Digit Recognizer
 
 # Técnicas
 
