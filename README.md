@@ -1,4 +1,4 @@
-# Ciência de Dados
+# Estudos
 
 [Análise 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/titanic.ipynb) Titanic
 
@@ -8,7 +8,7 @@
 
 [Análise 4.](https://github.com/alexandre11aa/notebooks/blob/main/data_science/digit_recognizer.ipynb) Digit Recognizer
 
-# Processamento de Dados
+# Técnicas
 
 [Método 1.](https://github.com/alexandre11aa/notebooks/blob/main/data_processing/numeralizacao_de_variaveis_categoricas.ipynb) Numeralização de Variáveis Categóricas
 
