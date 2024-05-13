@@ -22,6 +22,6 @@
 
 └─ *Processamento de Linguagem Natural /*
 
-&nbsp;&nbsp;&nbsp; ├─ [Técnica 1.]()
+&nbsp;&nbsp;&nbsp; ├─ [Técnica 1.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/limpeza_de_texto.ipynb) Limpeza de Texto
 
-&nbsp;&nbsp;&nbsp; └─ [Técnica 2.]()
+&nbsp;&nbsp;&nbsp; └─ [Técnica 2.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/vetorizacao_de_texto.ipynb) Vetorização de Texto
