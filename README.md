@@ -16,13 +16,13 @@
 
 │&nbsp;│&nbsp;├─ [Técnica 6.]() Acurácia para Modelos de Regressão e Classificação
 
-│&nbsp;├─ *Agrupamento /*
+│&nbsp;├─ *Agrupamento de Dados /*
 
 │&nbsp;│&nbsp;├─ [Técnica 1.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/cluster/agrupamento_de_dados.ipynb) Agrupamento de Dados Quantitativos
 
 │&nbsp;│&nbsp;└─ [Técnica 2.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/cluster/analises_de_agrupamentos.ipynb) Análises de Agrupamentos
 
-│&nbsp;└─ *Agrupamento de Dados /*
+│&nbsp;└─ *Processamento de Linguagem Natural /*
 
 │&nbsp;&nbsp;&nbsp;&nbsp; ├─ [Técnica 1.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/limpeza_de_texto.ipynb) Limpeza de Texto
 
