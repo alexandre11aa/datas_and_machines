@@ -36,4 +36,6 @@
 
 &nbsp;&nbsp;&nbsp;├─ [Estudo 3.](https://github.com/alexandre11aa/notebooks/blob/main/studies/obitos_por_fa/obitos_por_fa.ipynb) Óbitos por Febre Amarela no Brasil
 
-&nbsp;&nbsp;&nbsp;└─ [Estudo 4.](https://github.com/alexandre11aa/notebooks/blob/main/studies/digit_recognizer/digit_recognizer.ipynb) Digit Recognizer
+&nbsp;&nbsp;&nbsp;├─ [Estudo 4.](https://github.com/alexandre11aa/notebooks/blob/main/studies/digit_recognizer/digit_recognizer.ipynb) Digit Recognizer
+
+&nbsp;&nbsp;&nbsp;└─ [Estudo 5.]() Toxic Tweets
