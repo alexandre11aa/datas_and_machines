@@ -38,4 +38,4 @@
 
 &nbsp;&nbsp;&nbsp;├─ [Estudo 4.](https://github.com/alexandre11aa/notebooks/blob/main/studies/digit_recognizer/digit_recognizer.ipynb) Digit Recognizer
 
-&nbsp;&nbsp;&nbsp;└─ [Estudo 5.]() Toxic Tweets
+&nbsp;&nbsp;&nbsp;└─ [Estudo 5.](https://github.com/alexandre11aa/notebooks/tree/main/studies/toxic_tweets) Toxic Tweets
