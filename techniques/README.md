@@ -2,7 +2,7 @@
 
 ├─ *Pré-processamento /*
 
-│&nbsp;├─ [Técnica 1.]() Separação de Dados para Treino, Verificação e Teste
+│&nbsp;├─ [Técnica 1.]() Separação de Dados para Treino, Verificação e Teste *(Em manutenção)*
 
 │&nbsp;├─ [Técnica 2.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/numeralizacao_de_variaveis_categoricas.ipynb) Numeralização de Variáveis Categóricas
 
@@ -10,9 +10,9 @@
 
 │&nbsp;└─ [Técnica 4.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/substituicao_por_medidas_centrais.ipynb) Substituição de Outliers por Medidas Centrais
 
-│&nbsp;├─ [Técnica 5.]() Treinamento para Validação Cruzada
+│&nbsp;├─ [Técnica 5.]() Treinamento para Validação Cruzada *(Em manutenção)*
 
-│&nbsp;├─ [Técnica 6.]() Acurácia para Modelos de Regressão e Classificação
+│&nbsp;├─ [Técnica 6.]() Acurácia para Modelos de Regressão e Classificação *(Em manutenção)*
 
 ├─ *Agrupamento de Dados/*
 
@@ -20,8 +20,18 @@
 
 │&nbsp;└─ [Técnica 2.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/cluster/analises_de_agrupamentos.ipynb) Análises de Agrupamentos
 
-└─ *Processamento de Linguagem Natural /*
+├─ *Processamento de Linguagem Natural /*
 
-&nbsp;&nbsp;&nbsp; ├─ [Técnica 1.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/limpeza_de_texto.ipynb) Limpeza de Texto
+│&nbsp;&nbsp; ├─ [Técnica 1.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/limpeza_de_texto.ipynb) Limpeza de Texto
 
-&nbsp;&nbsp;&nbsp; └─ [Técnica 2.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/vetorizacao_de_texto.ipynb) Vetorização de Texto
+│&nbsp;&nbsp; ├─ [Técnica 2.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/vetorizacao_de_texto.ipynb) Vetorização de Texto
+
+│&nbsp;&nbsp; ├─ [Técnica 3.]() Frequência e Nuvem de Palavras *(Em manutenção)*
+
+│&nbsp;&nbsp; └─ [Técnica 4.]() Funções de Rotulagem *(Em manutenção)*
+
+└─ *Visão Computacional /*
+
+&nbsp;&nbsp;&nbsp; ├─ [Técnica 1.]() 
+
+&nbsp;&nbsp;&nbsp; └─ [Técnica 2.]()
