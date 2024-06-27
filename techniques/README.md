@@ -22,13 +22,13 @@
 
 ├─ *Processamento de Linguagem Natural /*
 
-│&nbsp;&nbsp; ├─ [Técnica 1.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/limpeza_de_texto.ipynb) Limpeza de Texto
+│&nbsp;├─ [Técnica 1.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/limpeza_de_texto.ipynb) Limpeza de Texto
 
-│&nbsp;&nbsp; ├─ [Técnica 2.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/vetorizacao_de_texto.ipynb) Vetorização de Texto
+│&nbsp;├─ [Técnica 2.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/nlp/vetorizacao_de_texto.ipynb) Vetorização de Texto
 
-│&nbsp;&nbsp; ├─ [Técnica 3.]() Frequência e Nuvem de Palavras *(Em manutenção)*
+│&nbsp;├─ [Técnica 3.]() Frequência e Nuvem de Palavras *(Em manutenção)*
 
-│&nbsp;&nbsp; └─ [Técnica 4.]() Funções de Rotulagem *(Em manutenção)*
+│&nbsp;└─ [Técnica 4.]() Funções de Rotulagem *(Em manutenção)*
 
 └─ *Visão Computacional /*
 
