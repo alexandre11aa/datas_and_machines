@@ -32,6 +32,8 @@
 
 └─ *Visão Computacional /*
 
-&nbsp;&nbsp;&nbsp; ├─ [Técnica 1.]() 
+&nbsp;&nbsp;&nbsp; ├─ [Técnica 1.]() Manipulação e Visualização de Imagem *(Em manutenção)*
 
-&nbsp;&nbsp;&nbsp; └─ [Técnica 2.]()
+&nbsp;&nbsp;&nbsp; ├─ [Técnica 2.]() Segmentação de Imagens *(Em manutenção)*
+
+&nbsp;&nbsp;&nbsp; └─ [Técnica 3.]() Deteção de Espectro de Cores *(Em manutenção)*
