@@ -38,4 +38,6 @@
 
 &nbsp;&nbsp;&nbsp;├─ [Estudo 4.](https://github.com/alexandre11aa/notebooks/blob/main/studies/digit_recognizer/digit_recognizer.ipynb) Digit Recognizer
 
-&nbsp;&nbsp;&nbsp;└─ [Estudo 5.](https://github.com/alexandre11aa/notebooks/blob/main/studies/toxic_tweets/final_project.ipynb) Toxic Tweets
+&nbsp;&nbsp;&nbsp;├─ [Estudo 5.](https://github.com/alexandre11aa/notebooks/blob/main/studies/toxic_tweets/final_project.ipynb) Toxic Tweets
+
+&nbsp;&nbsp;&nbsp;└─ [Estudo 6.](https://github.com/alexandre11aa/notebooks/blob/main/studies/areas_verdes/final_project.ipynb) Detecção e Quantificação de Áreas Verdes
