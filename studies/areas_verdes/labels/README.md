@@ -1,1 +1,1 @@
-*Pasta necessárias para armazenamento dos fragmentos das imagens da pasta **images**.*
+*Pasta necessárias para armazenamento dos fragmentos das imagens da pasta **features**.*
