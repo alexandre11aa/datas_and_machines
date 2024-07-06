@@ -8,11 +8,11 @@
 
 │&nbsp;├─ [Técnica 3.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/normalizacao_de_dados.ipynb) Normalização de Dados Quantitativos
 
-│&nbsp;└─ [Técnica 4.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/substituicao_por_medidas_centrais.ipynb) Substituição de Outliers por Medidas Centrais
+│&nbsp;├─ [Técnica 4.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/substituicao_por_medidas_centrais.ipynb) Substituição de Outliers por Medidas Centrais
 
 │&nbsp;├─ [Técnica 5.]() Treinamento para Validação Cruzada *(Em manutenção)*
 
-│&nbsp;├─ [Técnica 6.]() Acurácia para Modelos de Regressão e Classificação *(Em manutenção)*
+│&nbsp;└─ [Técnica 6.]() Acurácia para Modelos de Regressão e Classificação *(Em manutenção)*
 
 ├─ *Agrupamento de Dados/*
 
