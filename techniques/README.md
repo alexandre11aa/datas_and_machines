@@ -14,7 +14,7 @@
 
 │&nbsp;└─ [Técnica 6.]() Acurácia para Modelos de Regressão e Classificação *(Em manutenção)*
 
-├─ *Agrupamento de Dados/*
+├─ *Agrupamento de Dados /*
 
 │&nbsp;├─ [Técnica 1.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/cluster/agrupamento_de_dados.ipynb) Agrupamento de Dados Quantitativos
 
