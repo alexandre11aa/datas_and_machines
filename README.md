@@ -4,6 +4,8 @@
 
 │&nbsp;├─ *Pré-processamento /*
 
+│&nbsp;│&nbsp;├─ [Técnica 1.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/separacao_de_dados_treinamento_validacao_teste.ipynb) Separação de Dados para Treino, Verificação e Teste
+
 │&nbsp;│&nbsp;├─ [Técnica 2.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/numeralizacao_de_variaveis_categoricas.ipynb) Numeralização de Variáveis Categóricas
 
 │&nbsp;│&nbsp;├─ [Técnica 3.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/normalizacao_de_dados.ipynb) Normalização de Dados Quantitativos
