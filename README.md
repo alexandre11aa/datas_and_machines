@@ -10,7 +10,9 @@
 
 │&nbsp;│&nbsp;├─ [Técnica 3.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/normalizacao_de_dados.ipynb) Normalização de Dados Quantitativos  
 
-│&nbsp;│&nbsp;└─ [Técnica 4.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/substituicao_por_medidas_centrais.ipynb) Substituição de Outliers por Medidas Centrais  
+│&nbsp;│&nbsp;├─ [Técnica 4.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/substituicao_por_medidas_centrais.ipynb) Substituição de Outliers por Medidas Centrais  
+
+│&nbsp;│&nbsp;└─ [Técnica 5.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/deteccao_e_exclusao_de_dados_duplicados.ipynb) Detecção e Exclusão de Dados Duplicados   
 
 │&nbsp;├─ *Agrupamento de Dados /*  
 
