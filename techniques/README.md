@@ -5,7 +5,7 @@
 │&nbsp;├─ [Técnica 3.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/normalizacao_de_dados.ipynb) Normalização de Dados Quantitativos  
 │&nbsp;├─ [Técnica 4.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/substituicao_por_medidas_centrais.ipynb) Substituição de Outliers por Medidas Centrais  
 │&nbsp;├─ [Técnica 5.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/deteccao_e_exclusao_de_dados_duplicados.ipynb) Detecção e Exclusão de Dados Duplicados   
-│&nbsp;├─ [Técnica 6.]() Tratamento de Valores Ausentes com Algoritmos de Imputação *(Em manutenção)*  
+│&nbsp;├─ [Técnica 6.](https://github.com/alexandre11aa/notebooks/blob/main/techniques/preprocessing/tratamento_de_valores_ausentes.ipynb) Tratamento de Valores Ausentes com Algoritmos de Imputação
 │&nbsp;├─ [Técnica 7.]() Geração de Atributos Sintéticos *(Em manutenção)*  
 │&nbsp;├─ [Técnica 8.]() Treinamento para Validação Cruzada *(Em manutenção)*  
 │&nbsp;└─ [Técnica 9.]() Acurácia para Modelos de Regressão e Classificação *(Em manutenção)*  
