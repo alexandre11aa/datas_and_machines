@@ -6,7 +6,7 @@ Bem-vindo ao repositório de Dados! Este repositório é dividido em duas seçõ
 
 [Técnicas](https://github.com/alexandre11aa/notebooks/tree/main/techniques): Focado na aplicação prática de técnicas de Machine Learning, com exemplos e exploração de conceitos.
 
-### Estrutura do Repositório
+## Estrutura do Repositório
 
 ```shell
 ├── studies/
@@ -19,7 +19,7 @@ Bem-vindo ao repositório de Dados! Este repositório é dividido em duas seçõ
 └── README.md
 ```
 
-### Como Usar o Repositório
+## Como Usar o Repositório
 
 1. Clone o repositório para sua máquina local:
 
@@ -33,7 +33,7 @@ git clone https://github.com/<usuario>/https://github.com/alexandre11aa/notebook
 jupyter notebook
 ```
 
-### Licença
+## Licença
 
 Este repositório é licenciado sob a [GPL-3.0 license](https://github.com/alexandre11aa/notebooks/blob/main/LICENSE). Sinta-se livre para usar e modificar os conteúdos conforme necessário.
 
