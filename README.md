@@ -2,9 +2,9 @@
 
 Bem-vindo ao repositório de Dados! Este repositório é dividido em duas seções principais:
 
-Estudos: Contém análises e estudos realizados na área de aprendizado de máquina, implementações teóricas e experimentos.
+[Estudos](https://github.com/alexandre11aa/notebooks/tree/main/studies): Contém análises e estudos realizados na área de aprendizado de máquina, implementações teóricas e experimentos.
 
-Técnicas: Focado na aplicação prática de técnicas de Machine Learning, com exemplos e exploração de conceitos.
+[Técnicas](https://github.com/alexandre11aa/notebooks/tree/main/techniques): Focado na aplicação prática de técnicas de Machine Learning, com exemplos e exploração de conceitos.
 
 # Estrutura do Repositório
 
@@ -15,6 +15,7 @@ Técnicas: Focado na aplicação prática de técnicas de Machine Learning, com 
 ├── techniques/
 │   ├── README.ipynb
 │   └── ...
+├── LICENSE
 └── README.md
 ```
 
@@ -23,7 +24,7 @@ Técnicas: Focado na aplicação prática de técnicas de Machine Learning, com 
 1. Clone o repositório para sua máquina local:
 
 ```shell
-git clone https://github.com/<usuario>/repositorio-ml.git
+git clone https://github.com/<usuario>/https://github.com/alexandre11aa/notebooks.git
 ```
 
 2. Para abrir os notebooks Jupyter, certifique-se de ter o Jupyter instalado e execute:
@@ -34,6 +35,6 @@ jupyter notebook
 
 # Licença
 
-Este repositório é licenciado sob a MIT License. Sinta-se livre para usar e modificar os conteúdos conforme necessário.
+Este repositório é licenciado sob a [GPL-3.0 license](https://github.com/alexandre11aa/notebooks/blob/main/LICENSE). Sinta-se livre para usar e modificar os conteúdos conforme necessário.
 
-Esperamos que este repositório seja útil para seus estudos e aplicações práticas em Machine Learning!
+Espero que este repositório seja útil para seus estudos e aplicações práticas em Dados!
