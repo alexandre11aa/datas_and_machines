@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Configuração de dados – Aprendendo com Dados e Máquinas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-05ea6bbbbf92dee331a591801ef1027f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Aprendendo com Dados e Máquinas
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">Aprendendo com Dados e Máquinas</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pré-processamento</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/separacao_de_dados_treinamento_validacao_teste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Separação de Dados para Treino, Verificação e Teste</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/deteccao_e_exclusao_de_dados_duplicados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Detecção e Exclusão de Dados Duplicados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/tratamento_de_valores_ausentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tratamento de Valores Ausentes com Algoritmos de Imputação</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/substituicao_por_medidas_centrais.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Substituição de Outliers por Medidas Centrais</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/numeralizacao_de_variaveis_categoricas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numeralização de Variáveis Categóricas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/normalizacao_de_dados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normalização de Dados Quantitativos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/geracao_de_atributos_sinteticos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geração de Atributos Sintéticos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/verificacao_de_normalidade_dos_dados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verificação de Normalidade dos Dados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/deteccao_de_colinearidade_e_multicolinearidade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Detecção de Colinearidade e Multicolinearidade</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/selecao_de_atributos_com_metodos_baseados_em_importancia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Seleção de Atributos com Métodos Baseados em Importância</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/analise_de_componentes_principais_pca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Análise de Componentes Principais (PCA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/uso_de_auto_machine_learning_para_preprocessamento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uso de Auto Machine Learning para Pré-processamento</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Aprendizado Supervisionado</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/validacao_cruzada_para_modelos_supervisionados.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Validação Cruzada para Modelos Supervisionados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/metricas_para_modelos_de_regressao_e_classificacao.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Métricas para Modelos de Regressão e Classificação</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/tecnicas_de_balanceamento_de_classes.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Técnicas de Balanceamento de Classes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/treinamento_de_modelos_de_regressao.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treinamento de Modelos de Regressão</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/treinamento_de_modelos_de_classificacao.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treinamento de Modelos de Classificação</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sobre</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#definição-dados-para-aprendizado" id="toc-definição-dados-para-aprendizado" class="nav-link active" data-scroll-target="#definição-dados-para-aprendizado">Definição Dados para Aprendizado</a></li>
+  <li><a href="#teste-de-acurácia-para-treinamentos" id="toc-teste-de-acurácia-para-treinamentos" class="nav-link" data-scroll-target="#teste-de-acurácia-para-treinamentos">Teste de Acurácia para Treinamentos</a></li>
+  <li><a href="#treinamento-de-máquina" id="toc-treinamento-de-máquina" class="nav-link" data-scroll-target="#treinamento-de-máquina">Treinamento de Máquina</a></li>
+  <li><a href="#exportação-de-resultados" id="toc-exportação-de-resultados" class="nav-link" data-scroll-target="#exportação-de-resultados">Exportação de Resultados</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Configuração de dados</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div id="f9594ab9" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> pd.read_csv(<span class="st">'test.csv'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>train <span class="op">=</span> pd.read_csv(<span class="st">'train.csv'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>gender_submission <span class="op">=</span> pd.read_csv(<span class="st">'gender_submission.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="13b21abc" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função para promover agilidade em analises.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analise(coluna):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Transformando lista de constantes únicas e suas quantidades em string.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    constantes_unicas <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(<span class="bu">list</span>(coluna.value_counts()))):          </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>   (i <span class="op">==</span> <span class="dv">0</span>):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            constantes_unicas <span class="op">+=</span> <span class="bu">str</span>(<span class="bu">list</span>(coluna.value_counts())[i]) <span class="op">+</span> <span class="st">' "'</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">list</span>(coluna.value_counts().index)[i]) <span class="op">+</span> <span class="st">'",'</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> (i <span class="op">==</span> <span class="bu">len</span>(coluna.unique()) <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            constantes_unicas <span class="op">+=</span> <span class="st">' '</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">list</span>(coluna.value_counts())[i]) <span class="op">+</span> <span class="st">' "'</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">list</span>(coluna.value_counts().index)[i]) <span class="op">+</span> <span class="st">'"'</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            constantes_unicas <span class="op">+=</span> <span class="st">' '</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">list</span>(coluna.value_counts())[i]) <span class="op">+</span> <span class="st">' "'</span> <span class="op">+</span> <span class="bu">str</span>(<span class="bu">list</span>(coluna.value_counts().index)[i]) <span class="op">+</span> <span class="st">'",'</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Análise dos dados</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Existem </span><span class="sc">{</span>coluna<span class="sc">.</span>nunique()<span class="sc">}</span><span class="ss"> constantes únicas que são </span><span class="sc">{</span>constantes_unicas<span class="sc">}</span><span class="ss"> e </span><span class="sc">{</span>coluna<span class="sc">.</span>isna()<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss"> dados faltantes.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="bf887209" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fazendo diferenciação e união de planilhas</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>test[<span class="st">'Modify'</span>] <span class="op">=</span> <span class="st">'test'</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>train[<span class="st">'Modify'</span>] <span class="op">=</span> <span class="st">'train'</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>df_create <span class="op">=</span> pd.concat([test, train])</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>df_create.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Ticket</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Cabin</th>
+<th data-quarto-table-cell-role="th">Embarked</th>
+<th data-quarto-table-cell-role="th">Modify</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>892</td>
+<td>3</td>
+<td>Kelly, Mr. James</td>
+<td>male</td>
+<td>34.5</td>
+<td>0</td>
+<td>0</td>
+<td>330911</td>
+<td>7.8292</td>
+<td>NaN</td>
+<td>Q</td>
+<td>test</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>893</td>
+<td>3</td>
+<td>Wilkes, Mrs. James (Ellen Needs)</td>
+<td>female</td>
+<td>47.0</td>
+<td>1</td>
+<td>0</td>
+<td>363272</td>
+<td>7.0000</td>
+<td>NaN</td>
+<td>S</td>
+<td>test</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>894</td>
+<td>2</td>
+<td>Myles, Mr. Thomas Francis</td>
+<td>male</td>
+<td>62.0</td>
+<td>0</td>
+<td>0</td>
+<td>240276</td>
+<td>9.6875</td>
+<td>NaN</td>
+<td>Q</td>
+<td>test</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>895</td>
+<td>3</td>
+<td>Wirz, Mr. Albert</td>
+<td>male</td>
+<td>27.0</td>
+<td>0</td>
+<td>0</td>
+<td>315154</td>
+<td>8.6625</td>
+<td>NaN</td>
+<td>S</td>
+<td>test</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>896</td>
+<td>3</td>
+<td>Hirvonen, Mrs. Alexander (Helga E Lindqvist)</td>
+<td>female</td>
+<td>22.0</td>
+<td>1</td>
+<td>1</td>
+<td>3101298</td>
+<td>12.2875</td>
+<td>NaN</td>
+<td>S</td>
+<td>test</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<section id="passengerld" class="level4">
+<h4 class="anchored" data-anchor-id="passengerld">Passengerld</h4>
+<p>A coluna “Passengerld” apenas escala de forma crescente, com o intervalo de 1 unidade. Logo, fica claro que a lógica dela não têm nenhuma interferência no comportamento de outras colunas, e conseguentemente também não influenciará na probabilidade do passageiro sobreviver ou não.</p>
+</section>
+<section id="pclass" class="level4">
+<h4 class="anchored" data-anchor-id="pclass">Pclass</h4>
+<div id="82066604" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>analise(df_create[<span class="st">'Pclass'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 3 constantes únicas que são 709 "3", 323 "1", 277 "2" e 0 dados faltantes.</code></pre>
+</div>
+</div>
+<div id="462bb9ae" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">Analisando a coluna, é nítido e notório que ela não precisa de nenhum tratamento estatístico </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">de dados visto que existem poucas variáveis, e não nenhum dado faltantes.</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformação das variáveis de "Pclass" em multiplas colunas que representam de      forma </span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># binária os dados de cada uma delas.</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Pclass <span class="op">=</span> pd.get_dummies(df_create[<span class="st">'Pclass'</span>], prefix<span class="op">=</span><span class="st">'Pclass'</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> Pclass</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>df_final.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Pclass_1</th>
+<th data-quarto-table-cell-role="th">Pclass_2</th>
+<th data-quarto-table-cell-role="th">Pclass_3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="name" class="level4">
+<h4 class="anchored" data-anchor-id="name">Name</h4>
+<div id="bbd2c0f9" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">Cada passageiro possui um nome diferente, logo, não faz sentido fazer uma análise geral   da </span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">coluna da forma que está. Porém, ao observar o nome dos passageiros nota-se que cada      um </span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">possui um pronome de tratamento, e estes tendem a se repetir. Então, faz mais        sentido </span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">classificar o nome dos passageiros com base neles, e aí sim fazer qualquer análise.</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Separando pronomes de tratamento e transformando em coluna</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>Name <span class="op">=</span> []</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> df_create[<span class="st">'Name'</span>]:</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    Name.append(i.split(<span class="st">', '</span>)[<span class="dv">1</span>].split(<span class="st">'.'</span>)[<span class="dv">0</span>])</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>df_create[<span class="st">'Pronoun'</span>] <span class="op">=</span> Name</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>analise(df_create[<span class="st">'Pronoun'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 18 constantes únicas que são 757 "Mr", 260 "Miss", 197 "Mrs", 61 "Master", 8 "Rev", 8 "Dr", 4 "Col", 2 "Ms", 2 "Major", 2 "Mlle", 1 "Sir", 1 "the Countess", 1 "Capt", 1 "Don", 1 "Lady", 1 "Mme", 1 "Dona", 1 "Jonkheer" e 0 dados faltantes.</code></pre>
+</div>
+</div>
+<div id="bdf7e33c" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">Analisando os números, quatro pronomes de tratamento possuem a esmagadora maioria         de</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">participação nos dados em comparação aos restantes. Essa afirmação pode ser           melhor</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">visualizada em um gráfico de barras.</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotando gráfico de barras de pronomes de tratamento</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>colunas_de_pronomes <span class="op">=</span> sns.<span class="bu">set</span>(font_scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>colunas_de_pronomes <span class="op">=</span> sns.countplot(data<span class="op">=</span>df_create, x<span class="op">=</span><span class="st">'Pronoun'</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>colunas_de_pronomes.set_xticklabels(colunas_de_pronomes.get_xticklabels(), rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> colunas_de_pronomes.patches:</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    colunas_de_pronomes.annotate(<span class="ss">f'</span><span class="sc">{</span>i<span class="sc">.</span>get_height()<span class="sc">}</span><span class="ss">'</span>, </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                     (i.get_x() <span class="op">+</span> i.get_width() <span class="op">/</span> <span class="fl">2.</span>, i.get_height()), </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                     ha<span class="op">=</span><span class="st">'center'</span>, va<span class="op">=</span><span class="st">'center'</span>, </span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                     fontsize<span class="op">=</span><span class="dv">8</span>, color<span class="op">=</span><span class="st">'black'</span>, xytext<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">5</span>),</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>                     textcoords<span class="op">=</span><span class="st">'offset points'</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>colunas_de_pronomes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="titanic_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="faa0db08" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">A depender do comportamento desses títulos que possuem aparições menores ou igual a    oito,</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">faz mais sentido os unir em apenas uma categória, algo como "outros".</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>quantidades_de_p <span class="op">=</span> df_create[<span class="st">'Pronoun'</span>].value_counts()</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>df_create[df_create[<span class="st">'Pronoun'</span>].isin(quantidades_de_p[quantidades_de_p <span class="op">&lt;=</span> <span class="dv">8</span>].index)][[<span class="st">'Pronoun'</span>, <span class="st">'Survived'</span>]].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>Pronoun       Survived
+Rev           0.0         6
+Dr            0.0         4
+              1.0         3
+Col           NaN         2
+Rev           NaN         2
+Mlle          1.0         2
+Capt          0.0         1
+Major         1.0         1
+Sir           1.0         1
+Ms            NaN         1
+              1.0         1
+Mme           1.0         1
+Lady          1.0         1
+Major         0.0         1
+Col           0.0         1
+Jonkheer      0.0         1
+Dr            NaN         1
+Dona          NaN         1
+Don           0.0         1
+Col           1.0         1
+the Countess  1.0         1
+dtype: int64</code></pre>
+</div>
+</div>
+<div id="213963ce" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">Analisando os dados, percebe-se que existem pronomes de tratamento citados que        apenas </span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">morreram, apenas viveram, e existem aqueles que as quantidades são divididas. Seria     mais </span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">lógico então resumir esses pronomes em apenas três, os com a taxa de mortalidade alta, baixa</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">e dividida.</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Separando manualmente os pronomes de tratamento</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>df_create[<span class="st">'Pronoun'</span>] <span class="op">=</span> df_create[<span class="st">'Pronoun'</span>].replace([<span class="st">'Capt'</span>, <span class="st">'Don'</span>, <span class="st">'Jonkheer'</span>, <span class="st">'Rev'</span>], <span class="st">'Pronoun_0'</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>df_create[<span class="st">'Pronoun'</span>] <span class="op">=</span> df_create[<span class="st">'Pronoun'</span>].replace([<span class="st">'Lady'</span>, <span class="st">'Mme'</span>, <span class="st">'Mlle'</span>, <span class="st">'Sir'</span>, <span class="st">'the Countess'</span>], <span class="st">'Pronoun_1'</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>df_create[<span class="st">'Pronoun'</span>] <span class="op">=</span> df_create[<span class="st">'Pronoun'</span>].replace([<span class="st">'Col'</span>, <span class="st">'Dona'</span>, <span class="st">'Dr'</span>, <span class="st">'Major'</span>, <span class="st">'Ms'</span>], <span class="st">'Pronoun_0_1'</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Nova análise de nomes</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>analise(df_create[<span class="st">'Pronoun'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 7 constantes únicas que são 757 "Mr", 260 "Miss", 197 "Mrs", 61 "Master", 17 "Pronoun_0_1", 11 "Pronoun_0", 6 "Pronoun_1" e 0 dados faltantes.</code></pre>
+</div>
+</div>
+<div id="fccce4b8" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformação das variáveis de "Pronoun" em multiplas colunas que representam de forma binária os dados</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># da coluna "Name".</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>b_Name <span class="op">=</span> pd.get_dummies(df_create[<span class="st">'Pronoun'</span>], prefix<span class="op">=</span><span class="st">'Name'</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> pd.concat([df_final, b_Name], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sex" class="level4">
+<h4 class="anchored" data-anchor-id="sex">Sex</h4>
+<div id="6640354d" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>analise(df_create[<span class="st">'Sex'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 2 constantes únicas que são 843 "male", 466 "female" e 0 dados faltantes.</code></pre>
+</div>
+</div>
+<div id="3584d325" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">Nota-se que existem apenas duas constantes sem nenhum dado faltante, logo, fica claro    que</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">não há necessidade de nenhum tratamento de dados, a não ser transforma-los em binário.</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando constante da coluna "Sex" em binário</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>df_create[<span class="st">'Sex'</span>] <span class="op">=</span> df_create[<span class="st">'Sex'</span>].replace([<span class="st">'male'</span>, <span class="st">'female'</span>], [<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> pd.concat([df_final, df_create[<span class="st">'Sex'</span>]], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="age" class="level4">
+<h4 class="anchored" data-anchor-id="age">Age</h4>
+<div id="4ce4ab60" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>analise(df_create[<span class="st">'Age'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 98 constantes únicas que são 47 "24.0", 43 "22.0", 41 "21.0", 40 "30.0", 39 "18.0", 34 "25.0", 32 "28.0", 31 "36.0", 30 "26.0", 30 "29.0", 30 "27.0", 29 "19.0", 26 "23.0", 24 "32.0", 23 "35.0", 23 "20.0", 23 "31.0", 21 "33.0", 21 "45.0", 20 "17.0", 20 "39.0", 19 "16.0", 18 "42.0", 18 "40.0", 16 "34.0", 15 "50.0", 14 "38.0", 14 "48.0", 14 "47.0", 12 "2.0", 11 "41.0", 10 "1.0", 10 "9.0", 10 "44.0", 10 "4.0", 10 "54.0", 9 "37.0", 9 "43.0", 9 "49.0", 8 "55.0", 8 "14.0", 8 "51.0", 7 "3.0", 7 "60.0", 6 "6.0", 6 "8.0", 6 "52.0", 6 "15.0", 6 "58.0", 6 "46.0", 5 "64.0", 5 "57.0", 5 "13.0", 5 "61.0", 5 "5.0", 5 "62.0", 4 "7.0", 4 "53.0", 4 "56.0", 4 "11.0", 4 "32.5", 4 "10.0", 4 "63.0", 3 "0.75", 3 "0.83", 3 "28.5", 3 "59.0", 3 "40.5", 3 "65.0", 3 "12.0", 3 "18.5", 2 "71.0", 2 "34.5", 2 "45.5", 2 "14.5", 2 "36.5", 2 "0.92", 2 "70.0", 2 "30.5", 1 "23.5", 1 "80.0", 1 "20.5", 1 "24.5", 1 "0.42", 1 "0.67", 1 "26.5", 1 "55.5", 1 "70.5", 1 "66.0", 1 "38.5", 1 "0.17", 1 "0.33", 1 "11.5", 1 "60.5", 1 "76.0", 1 "67.0", 1 "22.5", 1 "74.0", e 263 dados faltantes.</code></pre>
+</div>
+</div>
+<div id="907d3faa" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">Existem muitas idades diferentes, e ao mesmo tempo muitos dados faltantes. O caminho    mais </span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">lógico a se seguir é tentar estimar as idades faltantes com base na correlação   estatística </span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">dessa coluna, com as outras disponíveis.</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>df_create.corr()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">PassengerId</td>
+<td>1.000000</td>
+<td>-0.038354</td>
+<td>-0.013406</td>
+<td>0.028814</td>
+<td>-0.055224</td>
+<td>0.008942</td>
+<td>0.031428</td>
+<td>-0.005007</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Pclass</td>
+<td>-0.038354</td>
+<td>1.000000</td>
+<td>-0.124617</td>
+<td>-0.408106</td>
+<td>0.060832</td>
+<td>0.018322</td>
+<td>-0.558629</td>
+<td>-0.338481</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Sex</td>
+<td>-0.013406</td>
+<td>-0.124617</td>
+<td>1.000000</td>
+<td>-0.063645</td>
+<td>0.109609</td>
+<td>0.213125</td>
+<td>0.185523</td>
+<td>0.543351</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Age</td>
+<td>0.028814</td>
+<td>-0.408106</td>
+<td>-0.063645</td>
+<td>1.000000</td>
+<td>-0.243699</td>
+<td>-0.150917</td>
+<td>0.178740</td>
+<td>-0.077221</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">SibSp</td>
+<td>-0.055224</td>
+<td>0.060832</td>
+<td>0.109609</td>
+<td>-0.243699</td>
+<td>1.000000</td>
+<td>0.373587</td>
+<td>0.160238</td>
+<td>-0.035322</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Parch</td>
+<td>0.008942</td>
+<td>0.018322</td>
+<td>0.213125</td>
+<td>-0.150917</td>
+<td>0.373587</td>
+<td>1.000000</td>
+<td>0.221539</td>
+<td>0.081629</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Fare</td>
+<td>0.031428</td>
+<td>-0.558629</td>
+<td>0.185523</td>
+<td>0.178740</td>
+<td>0.160238</td>
+<td>0.221539</td>
+<td>1.000000</td>
+<td>0.257307</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Survived</td>
+<td>-0.005007</td>
+<td>-0.338481</td>
+<td>0.543351</td>
+<td>-0.077221</td>
+<td>-0.035322</td>
+<td>0.081629</td>
+<td>0.257307</td>
+<td>1.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="33ba9c13" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">As colunas que mais se correlacionam com "Age" são a "Pclass", "SibSp", "Parch" e    "Fare". </span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">Para preencher os dados faltantes, a melhor lógica a se seguir é tentar fazer médias, e para</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">aumentar a precisão dessas médias, elas serão calculadas com base em filtros das colunas que</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">se correlacionam. As colunas com excessão da "Fare" possuem poucas constantes únicas,  então </span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">para que seja viável utilizar essa última como filtro, faz-se necessária a classificação dos </span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">valores através de suas taxas.</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>sns.displot(df_create[<span class="st">'Fare'</span>], kde<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="titanic_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="7d98f83f" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">Ao observar o gráfico, fica nítido que a grande maioria dos passageiros estão apenas  dentro </span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">de uma pequena faixa de valores, enquanto a minoria possui uma maior variação desses.   Para </span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">facilitar a análise é possível dividir esses valores em três categorias de acordo com      o </span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">número de passageiros:</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">A baixa, que pode ser compreendida como a média das taxas que atingem aproximadamente     50 </span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">passageiros;</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">A razoável, que pode ser compreendida como a média das taxas que atingem números  superiores </span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">a 50 passageiros, e inferiores a aproximadamente 150 passageiros;</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co">A alta, que pode ser compreendida como a média das taxas que atingem números superiores    a </span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co">150 passageiros.</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co">Para a partir de que número pegar de forma mais precisa, é importante observar a  progressão</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co">dos dados.</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Crescimento da quantidade de passageiros conforme o valor aumenta</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">101</span>):</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'P(x &lt;= </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>df_create[(df_create[<span class="st">"Fare"</span>] <span class="op">&lt;=</span> i)][<span class="st">"Fare"</span>]<span class="sc">.</span>value_counts()<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss">'</span>, end<span class="op">=</span><span class="st">'</span><span class="ch">\t\t</span><span class="st">'</span>)</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'P(x &lt;= </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span>df_create[(df_create[<span class="st">"Fare"</span>] <span class="op">&lt;=</span> i)][<span class="st">"Fare"</span>]<span class="sc">.</span>value_counts()<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss">'</span>, end<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>       </span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>    c <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> c <span class="op">==</span> <span class="dv">4</span>:</span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>()</span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico desse crescimento        </span></span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>sns.displot(df_create[<span class="st">"Fare"</span>].value_counts(), kde<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>P(x &lt;= 0) = 17      P(x &lt;= 1) = 17      P(x &lt;= 2) = 17      P(x &lt;= 3) = 17      
+P(x &lt;= 4) = 18      P(x &lt;= 5) = 20      P(x &lt;= 6) = 20      P(x &lt;= 7) = 37      
+P(x &lt;= 8) = 360     P(x &lt;= 9) = 461     P(x &lt;= 10) = 491    P(x &lt;= 11) = 531    
+P(x &lt;= 12) = 543    P(x &lt;= 13) = 621    P(x &lt;= 14) = 642    P(x &lt;= 15) = 673    
+P(x &lt;= 16) = 716    P(x &lt;= 17) = 731    P(x &lt;= 18) = 739    P(x &lt;= 19) = 744    
+P(x &lt;= 20) = 752    P(x &lt;= 21) = 779    P(x &lt;= 22) = 787    P(x &lt;= 23) = 803    
+P(x &lt;= 24) = 812    P(x &lt;= 25) = 821    P(x &lt;= 26) = 882    P(x &lt;= 27) = 917    
+P(x &lt;= 28) = 940    P(x &lt;= 29) = 947    P(x &lt;= 30) = 965    P(x &lt;= 31) = 978    
+P(x &lt;= 32) = 997    P(x &lt;= 33) = 1004   P(x &lt;= 34) = 1005   P(x &lt;= 35) = 1013   
+P(x &lt;= 36) = 1017   P(x &lt;= 37) = 1021   P(x &lt;= 38) = 1024   P(x &lt;= 39) = 1032   
+P(x &lt;= 40) = 1044   P(x &lt;= 41) = 1045   P(x &lt;= 42) = 1049   P(x &lt;= 43) = 1052   
+P(x &lt;= 44) = 1052   P(x &lt;= 45) = 1052   P(x &lt;= 46) = 1053   P(x &lt;= 47) = 1061   
+P(x &lt;= 48) = 1063   P(x &lt;= 49) = 1063   P(x &lt;= 50) = 1068   P(x &lt;= 51) = 1070   
+P(x &lt;= 52) = 1084   P(x &lt;= 53) = 1088   P(x &lt;= 54) = 1094   P(x &lt;= 55) = 1096   
+P(x &lt;= 56) = 1102   P(x &lt;= 57) = 1114   P(x &lt;= 58) = 1118   P(x &lt;= 59) = 1118   
+P(x &lt;= 60) = 1124   P(x &lt;= 61) = 1124   P(x &lt;= 62) = 1130   P(x &lt;= 63) = 1130   
+P(x &lt;= 64) = 1132   P(x &lt;= 65) = 1137   P(x &lt;= 66) = 1137   P(x &lt;= 67) = 1139   
+P(x &lt;= 68) = 1139   P(x &lt;= 69) = 1139   P(x &lt;= 70) = 1152   P(x &lt;= 71) = 1154   
+P(x &lt;= 72) = 1156   P(x &lt;= 73) = 1156   P(x &lt;= 74) = 1163   P(x &lt;= 75) = 1163   
+P(x &lt;= 76) = 1167   P(x &lt;= 77) = 1172   P(x &lt;= 78) = 1177   P(x &lt;= 79) = 1182   
+P(x &lt;= 80) = 1193   P(x &lt;= 81) = 1193   P(x &lt;= 82) = 1196   P(x &lt;= 83) = 1200   
+P(x &lt;= 84) = 1208   P(x &lt;= 85) = 1208   P(x &lt;= 86) = 1208   P(x &lt;= 87) = 1211   
+P(x &lt;= 88) = 1211   P(x &lt;= 89) = 1211   P(x &lt;= 90) = 1218   P(x &lt;= 91) = 1218   
+P(x &lt;= 92) = 1220   P(x &lt;= 93) = 1220   P(x &lt;= 94) = 1224   P(x &lt;= 95) = 1224   
+P(x &lt;= 96) = 1224   P(x &lt;= 97) = 1224   P(x &lt;= 98) = 1224   P(x &lt;= 99) = 1224   
+P(x &lt;= 100) = 1224  </code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="titanic_files/figure-html/cell-17-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="2ab56ae9" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">Analisando a forma como os dados se comportam, é possível aferir a partir de que momento  se </span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">iniciam as três classes porpostas:</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">- Baixa: Os passageiros com a taxa maior ou igual a 0 e menor ou igual a 6, e maior ou igual</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co">a 32;</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co">                                                                                            </span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co">- Razoável: Os passageiros com a taxa maior que 9 e menor que 32;                           </span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co">                                                                                            </span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co">- Alta: Os passageiros com a taxa maior que 6 e menor ou igual a 9.                         </span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co">                                                                                            </span></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="co">Agora basta calcular as médiasdas idades, de acordo com os filtros.</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>Pclass_u <span class="op">=</span> <span class="bu">list</span>(df_create[<span class="st">"Pclass"</span>].unique())</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>SibSp_u <span class="op">=</span> <span class="bu">list</span>(df_create[<span class="st">"SibSp"</span>].unique())</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>Parch_u <span class="op">=</span> <span class="bu">list</span>(df_create[<span class="st">"Parch"</span>].unique())</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterações para "Pclass"</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(df_create[<span class="st">"Pclass"</span>].unique())):</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Iterações para "SibSp"</span></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(df_create[<span class="st">"SibSp"</span>].unique())):</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Iterações para "Parch"    </span></span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(df_create[<span class="st">"Parch"</span>].unique())):</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>                    </span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Iterações para "Fare"</span></span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>            filtro_nan <span class="op">=</span> ((df_create[<span class="st">"Pclass"</span>] <span class="op">==</span> Pclass_u[i]) <span class="op">&amp;</span> </span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>                          (df_create[<span class="st">"SibSp"</span>] <span class="op">==</span> SibSp_u[j]) <span class="op">&amp;</span> </span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>                          (df_create[<span class="st">"Parch"</span>] <span class="op">==</span> Parch_u[k]) <span class="op">&amp;</span></span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>                          (df_create[<span class="st">'Age'</span>].isna()))</span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>            filtro_mean <span class="op">=</span> ((df_create[<span class="st">"Pclass"</span>] <span class="op">==</span> Pclass_u[i]) <span class="op">&amp;</span> </span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>                           (df_create[<span class="st">"SibSp"</span>] <span class="op">==</span> SibSp_u[j]) <span class="op">&amp;</span> </span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a>                           (df_create[<span class="st">"Parch"</span>] <span class="op">==</span> Parch_u[k]))</span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a>            <span class="co">##  Alto</span></span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>            alto <span class="op">=</span> (df_create[<span class="st">"Fare"</span>] <span class="op">&gt;</span> <span class="dv">6</span>) <span class="op">&amp;</span> (df_create[<span class="st">"Fare"</span>] <span class="op">&lt;=</span> <span class="dv">9</span>)</span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>            df_create.loc[filtro_nan <span class="op">+</span> alto, <span class="st">'Age'</span>] <span class="op">=</span> df_create.loc[filtro_nan <span class="op">+</span> alto, <span class="st">'Age'</span>].fillna(df_create.loc[filtro_mean <span class="op">+</span> alto, <span class="st">'Age'</span>].mean())</span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>            <span class="co">## Razoável</span></span>
+<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>            razoavel <span class="op">=</span> (df_create[<span class="st">"Fare"</span>] <span class="op">&gt;</span> <span class="dv">9</span>) <span class="op">&amp;</span> (df_create[<span class="st">"Fare"</span>] <span class="op">&lt;</span> <span class="dv">32</span>)</span>
+<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>            df_create.loc[filtro_nan <span class="op">+</span> razoavel, <span class="st">'Age'</span>] <span class="op">=</span> df_create.loc[filtro_nan <span class="op">+</span> razoavel, <span class="st">'Age'</span>].fillna(df_create.loc[filtro_mean <span class="op">+</span> razoavel, <span class="st">'Age'</span>].mean())</span>
+<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a>            <span class="co">## Baixo</span></span>
+<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a>            baixo_06 <span class="op">=</span> (df_create[<span class="st">"Fare"</span>] <span class="op">&gt;=</span> <span class="dv">0</span>) <span class="op">&amp;</span> (df_create[<span class="st">"Fare"</span>] <span class="op">&lt;=</span> <span class="dv">6</span>)</span>
+<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>            df_create.loc[filtro_nan <span class="op">+</span> baixo_06, <span class="st">'Age'</span>] <span class="op">=</span> df_create.loc[filtro_nan <span class="op">+</span> baixo_06, <span class="st">'Age'</span>].fillna(df_create.loc[filtro_mean <span class="op">+</span> baixo_06, <span class="st">'Age'</span>].mean())</span>
+<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a>            baixo_32 <span class="op">=</span> (df_create[<span class="st">"Fare"</span>] <span class="op">&gt;=</span> <span class="dv">32</span>)</span>
+<span id="cb25-58"><a href="#cb25-58" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb25-59"><a href="#cb25-59" aria-hidden="true" tabindex="-1"></a>            df_create.loc[filtro_nan <span class="op">+</span> baixo_32, <span class="st">'Age'</span>] <span class="op">=</span> df_create.loc[filtro_nan <span class="op">+</span> baixo_32, <span class="st">'Age'</span>].fillna(df_create.loc[filtro_mean <span class="op">+</span> baixo_32, <span class="st">'Age'</span>].mean())</span>
+<span id="cb25-60"><a href="#cb25-60" aria-hidden="true" tabindex="-1"></a>           </span>
+<span id="cb25-61"><a href="#cb25-61" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> pd.concat([df_final, df_create[<span class="st">'Age'</span>]], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sibsp" class="level4">
+<h4 class="anchored" data-anchor-id="sibsp">SibSp</h4>
+<div id="184a0bc8" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>analise(df_create[<span class="st">'SibSp'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 7 constantes únicas que são 891 "0", 319 "1", 42 "2", 22 "4", 20 "3", 9 "8", 6 "5" e 0 dados faltantes.</code></pre>
+</div>
+</div>
+<div id="db13f9b8" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">As variáveis são todas numéricas, e não há nenhum dado faltante. Logo, fica claro que      a</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">coluna em questão não necessita de nenhum tratamento estatístico.</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> pd.concat([df_final, df_create[<span class="st">'SibSp'</span>]], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="parch" class="level4">
+<h4 class="anchored" data-anchor-id="parch">Parch</h4>
+<div id="527358f1" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>analise(df_create[<span class="st">'Parch'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 8 constantes únicas que são 1002 "0", 170 "1", 113 "2", 8 "3", 6 "4", 6 "5", 2 "6", 2 "9" e 0 dados faltantes.</code></pre>
+</div>
+</div>
+<div id="1cfbad56" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">As variáveis são todas numéricas, e não há nenhum dado faltante. Logo, fica claro que      a</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">coluna em questão não necessita de nenhum tratamento estatístico.</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> pd.concat([df_final, df_create[<span class="st">'Parch'</span>]], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="fare" class="level4">
+<h4 class="anchored" data-anchor-id="fare">Fare</h4>
+<div id="26ae3b93" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>analise(df_create[<span class="st">'Fare'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 281 constantes únicas que são 60 "8.05", 59 "13.0", 55 "7.75", 50 "26.0", 49 "7.8958", 35 "10.5", 26 "7.775", 24 "7.2292", 23 "7.925", 22 "26.55", 21 "7.225", 21 "7.8542", 21 "8.6625", 18 "7.25", 17 "0.0", 14 "21.0", 12 "9.5", 12 "16.1", 11 "69.55", 11 "14.5", 11 "27.7208", 10 "7.8792", 10 "7.7958", 10 "15.5", 10 "14.4542", 9 "7.05", 9 "24.15", 9 "15.2458", 8 "7.55", 8 "52.0", 8 "46.9", 8 "56.4958", 7 "31.275", 7 "13.5", 7 "39.0", 7 "23.0", 7 "30.0", 7 "39.6875", 7 "262.375", 7 "7.7333", 7 "31.3875", 7 "73.5", 6 "11.5", 6 "29.125", 6 "79.2", 6 "151.55", 6 "7.65", 6 "83.1583", 6 "27.9", 6 "30.5", 6 "263.0", 6 "26.25", 6 "53.1", 5 "227.525", 5 "134.5", 5 "27.75", 5 "65.0", 5 "21.075", 5 "12.35", 5 "90.0", 5 "34.375", 5 "211.5", 5 "25.4667", 5 "29.7", 4 "110.8833", 4 "120.0", 4 "41.5792", 4 "93.5", 4 "19.2583", 4 "135.6333", 4 "164.8667", 4 "18.0", 4 "59.4", 4 "51.8625", 4 "211.3375", 4 "35.5", 4 "512.3292", 4 "14.4583", 4 "7.125", 4 "20.575", 4 "23.45", 4 "221.7792", 4 "36.75", 4 "52.5542", 4 "15.85", 4 "12.475", 4 "55.4417", 3 "13.8583", 3 "6.4958", 3 "106.425", 3 "20.2125", 3 "7.8292", 3 "39.6", 3 "113.275", 3 "33.0", 3 "7.4958", 3 "26.2875", 3 "18.75", 3 "77.9583", 3 "153.4625", 3 "79.65", 3 "86.5", 3 "31.0", 3 "81.8583", 3 "20.525", 3 "76.7292", 3 "11.1333", 3 "108.9", 3 "20.25", 3 "37.0042", 3 "15.7417", 3 "146.5208", 3 "22.3583", 3 "9.35", 3 "78.85", 3 "22.025", 3 "22.525", 3 "21.6792", 3 "15.0458", 3 "6.4375", 3 "16.7", 3 "29.0", 3 "15.9", 3 "23.25", 3 "13.775", 3 "9.225", 3 "31.5", 3 "14.4", 3 "32.5", 3 "247.5208", 2 "11.2417", 2 "80.0", 2 "7.6292", 2 "10.4625", 2 "17.8", 2 "61.9792", 2 "49.5042", 2 "83.475", 2 "30.6958", 2 "61.3792", 2 "55.9", 2 "7.725", 2 "30.0708", 2 "42.4", 2 "7.0542", 2 "82.1708", 2 "18.7875", 2 "60.0", 2 "77.2875", 2 "78.2667", 2 "6.975", 2 "9.5875", 2 "9.825", 2 "66.6", 2 "12.2875", 2 "27.0", 2 "55.0", 2 "57.75", 2 "76.2917", 2 "91.0792", 2 "9.0", 2 "71.0", 2 "13.4167", 2 "19.5", 2 "6.75", 2 "7.0", 2 "13.8625", 2 "15.75", 2 "6.95", 2 "28.5", 2 "12.1833", 2 "17.4", 2 "57.9792", 2 "136.7792", 2 "7.8875", 2 "50.4958", 2 "133.65", 2 "75.25", 2 "71.2833", 2 "16.0", 2 "15.1", 2 "82.2667", 2 "8.1125", 2 "69.3", 2 "25.9292", 2 "19.9667", 2 "75.2417", 2 "14.1083", 2 "47.1", 2 "13.9", 2 "39.4", 2 "89.1042", 2 "12.875", 2 "50.0", 2 "8.5167", 2 "61.175", 2 "8.7125", 2 "15.55", 2 "51.4792", 2 "63.3583", 2 "57.0", 2 "24.0", 2 "56.9292", 2 "7.7375", 1 "12.65", 1 "7.875", 1 "6.8583", 1 "9.6875", 1 "38.5", 1 "13.7917", 1 "9.8458", 1 "5.0", 1 "8.3", 1 "6.45", 1 "8.6833", 1 "8.3625", 1 "9.4833", 1 "7.7417", 1 "10.1708", 1 "8.1375", 1 "9.8417", 1 "25.5875", 1 "8.4333", 1 "32.3208", 1 "7.7292", 1 "15.0", 1 "40.125", 1 "26.3875", 1 "49.5", 1 "34.0208", 1 "7.5208", 1 "7.0458", 1 "9.8375", 1 "12.0", 1 "25.7417", 1 "4.0125", 1 "7.5792", 1 "9.475", 1 "15.5792", 1 "8.0292", 1 "8.4583", 1 "28.5375", 1 "25.7", 1 "10.7083", 1 "7.7208", 1 "7.8208", 1 "7.7792", 1 "35.0", 1 "31.6792", 1 "7.2833", 1 "7.575", 1 "45.5", 1 "12.7375", 1 "9.325", 1 "8.9625", 1 "27.4458", 1 "42.5", 1 "7.8", 1 "15.0333", 1 "8.1583", 1 "7.7875", 1 "6.2375", 1 "14.0", 1 "8.85", 1 "3.1708", 1 "31.6833", 1 "12.275", 1 "8.4042", 1 "15.05", 1 "28.7125", 1 "33.5", 1 "25.925", 1 "7.85", 1 "7.3125", 1 "12.525", 1 "9.2167", 1 "26.2833", 1 "7.1417", 1 "8.6542", 1 "34.6542", 1 "10.5167", e 1 dados faltantes.</code></pre>
+</div>
+</div>
+<div id="1b735027" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co">As variáveis são todas numéricas, e existe apenas um dado faltante. A princípio uma    busca </span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co">por colunas com dados semelhantes e maior correlação pode solucionar o problema           de </span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co">preenchimento deste dado.</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>df_create[df_create[<span class="st">'Fare'</span>].isna()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Ticket</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Cabin</th>
+<th data-quarto-table-cell-role="th">Embarked</th>
+<th data-quarto-table-cell-role="th">Modify</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pronoun</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">152</td>
+<td>1044</td>
+<td>3</td>
+<td>Storey, Mr. Thomas</td>
+<td>0</td>
+<td>60.5</td>
+<td>0</td>
+<td>0</td>
+<td>3701</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>S</td>
+<td>test</td>
+<td>NaN</td>
+<td>Mr</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="822cf81e" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preenchendo dado faltante com média de dados após filtro de colunas que mais            se</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># correlacionam</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>filtro <span class="op">=</span> (df_create[<span class="st">'Pclass'</span>] <span class="op">==</span> <span class="dv">3</span>) <span class="op">&amp;</span> (df_create[<span class="st">'Sex'</span>] <span class="op">==</span> <span class="dv">0</span>) <span class="op">&amp;</span> (df_create[<span class="st">'Parch'</span>] <span class="op">==</span> <span class="dv">0</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>df_create.loc[filtro <span class="op">+</span> df_create[<span class="st">'Fare'</span>].isna(), <span class="st">'Fare'</span>] <span class="op">=</span> df_create.loc[filtro <span class="op">+</span> df_create[<span class="st">'Fare'</span>].isna(), <span class="st">'Fare'</span>].fillna(df_create.loc[filtro, <span class="st">'Fare'</span>].mean())</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando dados na planilha principal</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> pd.concat([df_final, df_create[<span class="st">'Fare'</span>]], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="embarked" class="level4">
+<h4 class="anchored" data-anchor-id="embarked">Embarked</h4>
+<div id="31b34d8b" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>analise(df_create[<span class="st">'Embarked'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 3 constantes únicas que são 914 "S", 270 "C", 123 "Q", e 2 dados faltantes.</code></pre>
+</div>
+</div>
+<div id="69dd547b" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co">Existem poucas variáveis nesta coluna, e apenas dois dados faltantes. Por as variáveis serem</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co">letras não é possível fazer a média como aconteceu na coluna "Fare", porém é possível  obter </span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co">informações em linhas que possuem variáveis semelhantes. Uma boa lógica a se usar é a de  se </span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co">basear no portão de embarque escolhido com base na cabine do passageiro, além de     algumas </span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co">outras colunas usadas como suporte.</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>df_create[df_create[<span class="st">'Embarked'</span>].isna()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Ticket</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Cabin</th>
+<th data-quarto-table-cell-role="th">Embarked</th>
+<th data-quarto-table-cell-role="th">Modify</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pronoun</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">61</td>
+<td>62</td>
+<td>1</td>
+<td>Icard, Miss. Amelie</td>
+<td>1</td>
+<td>38.0</td>
+<td>0</td>
+<td>0</td>
+<td>113572</td>
+<td>80.0</td>
+<td>B28</td>
+<td>NaN</td>
+<td>train</td>
+<td>1.0</td>
+<td>Miss</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">829</td>
+<td>830</td>
+<td>1</td>
+<td>Stone, Mrs. George Nelson (Martha Evelyn)</td>
+<td>1</td>
+<td>62.0</td>
+<td>0</td>
+<td>0</td>
+<td>113572</td>
+<td>80.0</td>
+<td>B28</td>
+<td>NaN</td>
+<td>train</td>
+<td>1.0</td>
+<td>Mrs</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="ee2c4cfb" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co">É importante notar que além das outras semelhanças, ambos os passageiros que não possuem  os </span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">dados de embarque, possuem o mesmo valor de "Ticket" e de "Fare". É razoável constatar então</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co">que eles embarcaram pelo mesmo portão. Seguinte a filtragem com base na cabine, o     filtro</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co">ocorrerá com base nas vigésimas cabines "B".</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>filtro <span class="op">=</span> df_create[(df_create[<span class="st">'Pclass'</span>] <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span> (df_create[<span class="st">'Cabin'</span>].<span class="bu">str</span>.startswith(<span class="st">'B2'</span>)) <span class="op">&amp;</span> (df_create[<span class="st">'Embarked'</span>].isna())]</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>filtro</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Ticket</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Cabin</th>
+<th data-quarto-table-cell-role="th">Embarked</th>
+<th data-quarto-table-cell-role="th">Modify</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pronoun</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">61</td>
+<td>62</td>
+<td>1</td>
+<td>Icard, Miss. Amelie</td>
+<td>1</td>
+<td>38.0</td>
+<td>0</td>
+<td>0</td>
+<td>113572</td>
+<td>80.0</td>
+<td>B28</td>
+<td>NaN</td>
+<td>train</td>
+<td>1.0</td>
+<td>Miss</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">829</td>
+<td>830</td>
+<td>1</td>
+<td>Stone, Mrs. George Nelson (Martha Evelyn)</td>
+<td>1</td>
+<td>62.0</td>
+<td>0</td>
+<td>0</td>
+<td>113572</td>
+<td>80.0</td>
+<td>B28</td>
+<td>NaN</td>
+<td>train</td>
+<td>1.0</td>
+<td>Mrs</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="52df10ce" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co">É importante notar que além das outras semelhanças, ambos os passageiros que não possuem  os </span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co">Surpreendentemente todos os passageiros dessas cabines embarcaram em "S", logo é    possível</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co">supor que os passageiros sem dados também embarcaram por lá.</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>df_create[<span class="st">'Embarked'</span>] <span class="op">=</span> df_create[<span class="st">'Embarked'</span>].fillna(<span class="st">'S'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="122113cc" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando números em sistema binário</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>b_Embarked <span class="op">=</span> pd.get_dummies(df_create[<span class="st">'Embarked'</span>], prefix<span class="op">=</span><span class="st">'Name'</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> pd.concat([df_final, b_Embarked], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="definição-dados-para-aprendizado" class="level3">
+<h3 class="anchored" data-anchor-id="definição-dados-para-aprendizado">Definição Dados para Aprendizado</h3>
+<div id="7b4aabec" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>modelo_arvore <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">100</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>modelo_logistico <span class="op">=</span> LogisticRegression()</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>df_final[<span class="st">'Modify'</span>] <span class="op">=</span> df_create[<span class="st">'Modify'</span>]</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>df_train_x <span class="op">=</span> df_final[df_final[<span class="st">'Modify'</span>] <span class="op">==</span> <span class="st">'train'</span>][df_final.columns.tolist()[:<span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>df_train_y <span class="op">=</span> df_create[df_create[<span class="st">'Modify'</span>] <span class="op">==</span> <span class="st">'train'</span>][[<span class="st">'Survived'</span>]]</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>df_test_x <span class="op">=</span> df_final[df_final[<span class="st">'Modify'</span>] <span class="op">==</span> <span class="st">'test'</span>][df_final.columns.tolist()[:<span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>df_test_y <span class="op">=</span> df_create[df_create[<span class="st">'Modify'</span>] <span class="op">==</span> <span class="st">'test'</span>][[<span class="st">'Survived'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="teste-de-acurácia-para-treinamentos" class="level3">
+<h3 class="anchored" data-anchor-id="teste-de-acurácia-para-treinamentos">Teste de Acurácia para Treinamentos</h3>
+<div id="b1ea33bb" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separando dados para teste de acurácia</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">0</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>x_train, x_valid, y_train, y_valid <span class="op">=</span> train_test_split(df_train_x, df_train_y, test_size<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Treinamento pela Random Forest</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>modelo_arvore.fit(x_train, y_train)</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Random Forest'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Random Forest</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+</div>
+<div id="df32e973" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Treinamento pelo Logistic Regression</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>modelo_logistico.fit(x_train, y_train)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Logistic Regression'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Logistic Regression</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+</div>
+<div id="a6cc1fbd" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pedindo para máquina predizer Survived dos dados x_valid pela Random Forest</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>p_acuracia <span class="op">=</span> modelo_arvore.predict(x_valid)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Média de igualdade entre o teste e os dados separados pela Random Forest</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>np.mean(y_valid[<span class="st">'Survived'</span>] <span class="op">==</span> p_acuracia)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>0.7959641255605381</code></pre>
+</div>
+</div>
+<div id="fe8512c0" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pedindo para máquina predizer Survived dos dados x_valid pelo Logistic Regression</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>p_acuracia <span class="op">=</span> modelo_logistico.predict(x_valid)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Média de igualdade entre o teste e os dados separados pelo Logistic Regression</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>np.mean(y_valid[<span class="st">'Survived'</span>] <span class="op">==</span> p_acuracia)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>0.8161434977578476</code></pre>
+</div>
+</div>
+</section>
+<section id="treinamento-de-máquina" class="level3">
+<h3 class="anchored" data-anchor-id="treinamento-de-máquina">Treinamento de Máquina</h3>
+<div id="972633d2" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Treinando pelo Logistic Regression</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>modelo_logistico.fit(df_train_x, df_train_y)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pedindo para máquina predizer Survived dos dados x_valid</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>p_test <span class="op">=</span> modelo_logistico.predict(df_test_x)</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>np.mean(gender_submission[<span class="st">'Survived'</span>] <span class="op">==</span> p_test)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<pre><code>0.930622009569378</code></pre>
+</div>
+</div>
+</section>
+<section id="exportação-de-resultados" class="level3">
+<h3 class="anchored" data-anchor-id="exportação-de-resultados">Exportação de Resultados</h3>
+<div id="abb818db" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Desenvolvendo série para csv</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> pd.Series(p_test, index<span class="op">=</span>test[<span class="st">'PassengerId'</span>], name<span class="op">=</span><span class="st">'Survived'</span>)</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> result.astype(<span class="bu">int</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="ee39225c" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exportando para csv</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>result.to_csv(<span class="st">'titanic.csv'</span>, header<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

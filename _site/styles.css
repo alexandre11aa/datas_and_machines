@@ -1,0 +1,76 @@
+/* css styles */
+
+/* Para navegadores baseados no WebKit (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+    width: 8px;  /* Largura da barra */
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;  /* Cor do fundo da barra */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;  /* Cor da alça da barra */
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;  /* Cor ao passar o mouse */
+}
+
+/* Para o Firefox */
+html {
+    scrollbar-color: #444 #1a1a1a;
+}
+
+/* Muda apenas a cor do texto do item selecionado */
+.navbar .active, 
+.sidebar .active, 
+.nav-link.active {
+    color: #ffffff !important; /* Branco escuro */
+    background-color: transparent !important; /* Remove o fundo */
+}
+
+/* Cor ao passar o mouse */
+.nav-link:hover, 
+.sidebar a:hover {
+    color: #ffffff !important; /* Branco mais forte ao passar o mouse */
+}
+
+/* Muda a cor do título "On This Page" na barra lateral */
+#quarto-margin-sidebar #toc-title {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* Muda a cor dos links dentro do sumário flutuante */
+#quarto-margin-sidebar .nav-link {
+    color: #ffffff !important;
+    text-decoration: none; /* Remove sublinhado */
+}
+
+/* Muda a cor do link ativo dentro do TOC */
+#quarto-margin-sidebar .nav-link.active {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* Muda a cor da barrinha lateral do item ativo no sumário */
+#TOC .nav-link.active {
+    border-left: 2px solid #1a1a1a !important; /* Escolha a cor desejada */
+}
+
+#toc-title {
+    visibility: hidden;
+    position: relative;
+}
+
+#toc-title::after {
+    content: "Nesta página";
+    visibility: visible;
+    color: white; /* Escolha a cor desejada */
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

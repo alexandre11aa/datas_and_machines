@@ -1,0 +1,2344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introdução ao Caderno – Aprendendo com Dados e Máquinas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-05ea6bbbbf92dee331a591801ef1027f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Aprendendo com Dados e Máquinas
+      </li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">Aprendendo com Dados e Máquinas</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Pré-processamento</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/separacao_de_dados_treinamento_validacao_teste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Separação de Dados para Treino, Verificação e Teste</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/deteccao_e_exclusao_de_dados_duplicados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Detecção e Exclusão de Dados Duplicados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/tratamento_de_valores_ausentes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tratamento de Valores Ausentes com Algoritmos de Imputação</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/substituicao_por_medidas_centrais.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Substituição de Outliers por Medidas Centrais</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/numeralizacao_de_variaveis_categoricas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Numeralização de Variáveis Categóricas</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/normalizacao_de_dados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Normalização de Dados Quantitativos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/geracao_de_atributos_sinteticos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Geração de Atributos Sintéticos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/verificacao_de_normalidade_dos_dados.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Verificação de Normalidade dos Dados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/deteccao_de_colinearidade_e_multicolinearidade.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Detecção de Colinearidade e Multicolinearidade</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/selecao_de_atributos_com_metodos_baseados_em_importancia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Seleção de Atributos com Métodos Baseados em Importância</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/analise_de_componentes_principais_pca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Análise de Componentes Principais (PCA)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/uso_de_auto_machine_learning_para_preprocessamento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uso de Auto Machine Learning para Pré-processamento</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Aprendizado Supervisionado</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/validacao_cruzada_para_modelos_supervisionados.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Validação Cruzada para Modelos Supervisionados</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/metricas_para_modelos_de_regressao_e_classificacao.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Métricas para Modelos de Regressão e Classificação</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/tecnicas_de_balanceamento_de_classes.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Técnicas de Balanceamento de Classes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/treinamento_de_modelos_de_regressao.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treinamento de Modelos de Regressão</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../notebooks/preprocessing/treinamento_de_modelos_de_classificacao.ipynb" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Treinamento de Modelos de Classificação</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sobre</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#carregando-dados" id="toc-carregando-dados" class="nav-link active" data-scroll-target="#carregando-dados">Carregando dados</a></li>
+  <li><a href="#funções-para-tratamento-de-dados" id="toc-funções-para-tratamento-de-dados" class="nav-link" data-scroll-target="#funções-para-tratamento-de-dados">Funções para Tratamento de Dados</a>
+  <ul class="collapse">
+  <li><a href="#taxa-de-ocorrência-de-valores" id="toc-taxa-de-ocorrência-de-valores" class="nav-link" data-scroll-target="#taxa-de-ocorrência-de-valores">Taxa de ocorrência de Valores</a></li>
+  <li><a href="#numeralização-por-binários" id="toc-numeralização-por-binários" class="nav-link" data-scroll-target="#numeralização-por-binários">Numeralização por Binários</a></li>
+  <li><a href="#numeralização-por-percentual" id="toc-numeralização-por-percentual" class="nav-link" data-scroll-target="#numeralização-por-percentual">Numeralização por Percentual</a></li>
+  <li><a href="#substituição-de-nulos-por-mediana" id="toc-substituição-de-nulos-por-mediana" class="nav-link" data-scroll-target="#substituição-de-nulos-por-mediana">Substituição de nulos por mediana</a></li>
+  <li><a href="#substituição-de-nulos-por-média" id="toc-substituição-de-nulos-por-média" class="nav-link" data-scroll-target="#substituição-de-nulos-por-média">Substituição de nulos por média</a></li>
+  <li><a href="#k-means" id="toc-k-means" class="nav-link" data-scroll-target="#k-means">K-Means</a></li>
+  </ul></li>
+  <li><a href="#processamento-de-colunas" id="toc-processamento-de-colunas" class="nav-link" data-scroll-target="#processamento-de-colunas">Processamento de Colunas</a>
+  <ul class="collapse">
+  <li><a href="#macrorreg_lpi" id="toc-macrorreg_lpi" class="nav-link" data-scroll-target="#macrorreg_lpi">‘MACRORREG_LPI’</a></li>
+  <li><a href="#cod_uf_lpi-e-uf_lpi" id="toc-cod_uf_lpi-e-uf_lpi" class="nav-link" data-scroll-target="#cod_uf_lpi-e-uf_lpi">‘COD_UF_LPI’ e ‘UF_LPI’</a></li>
+  <li><a href="#cod_mun_lpi-e-mun_lpi" id="toc-cod_mun_lpi-e-mun_lpi" class="nav-link" data-scroll-target="#cod_mun_lpi-e-mun_lpi">‘COD_MUN_LPI’ e ‘MUN_LPI’</a></li>
+  <li><a href="#sexo" id="toc-sexo" class="nav-link" data-scroll-target="#sexo">SEXO</a></li>
+  <li><a href="#idade" id="toc-idade" class="nav-link" data-scroll-target="#idade">IDADE</a></li>
+  <li><a href="#dt_is" id="toc-dt_is" class="nav-link" data-scroll-target="#dt_is">DT_IS</a></li>
+  <li><a href="#se_is" id="toc-se_is" class="nav-link" data-scroll-target="#se_is">SE_IS</a></li>
+  <li><a href="#mes_is" id="toc-mes_is" class="nav-link" data-scroll-target="#mes_is">MES_IS</a>
+  <ul class="collapse">
+  <li><a href="#ano_is-e-monitoramento_is" id="toc-ano_is-e-monitoramento_is" class="nav-link" data-scroll-target="#ano_is-e-monitoramento_is">‘ANO_IS’ e ‘MONITORAMENTO_IS’</a></li>
+  <li><a href="#obito" id="toc-obito" class="nav-link" data-scroll-target="#obito">‘OBITO’</a></li>
+  <li><a href="#normalizando-colunas" id="toc-normalizando-colunas" class="nav-link" data-scroll-target="#normalizando-colunas">Normalizando colunas</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#predição" id="toc-predição" class="nav-link" data-scroll-target="#predição">Predição</a>
+  <ul class="collapse">
+  <li><a href="#testando-acurácia-para-diferentes-agrupamentos" id="toc-testando-acurácia-para-diferentes-agrupamentos" class="nav-link" data-scroll-target="#testando-acurácia-para-diferentes-agrupamentos">Testando acurácia para diferentes agrupamentos</a></li>
+  <li><a href="#treinando-e-realizando-predição" id="toc-treinando-e-realizando-predição" class="nav-link" data-scroll-target="#treinando-e-realizando-predição">Treinando e realizando Predição</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Introdução ao Caderno</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Esse caderno trata da predição de óbitos humanos por febre amarela no Brasil por aprendizado de máquinas supervisionado, a partir de uma base de dados pública disponibilizada pelo Mistério da Saúde do Brasil.</p>
+<ul>
+<li><p>A fonte dos dados pode ser encontrada no seguinte endereço:</p>
+<p>https://dados.gov.br/dados/conjuntos-dados/febre-amarela-em-humanos-e-primatas-no-humanos—1994-a-2021</p></li>
+<li><p>Os dados são rótulados e possuem as seguintes variáveis:</p>
+<ul>
+<li>MACRORREG_LPI: Identificador sequencial único</li>
+<li>COD_UF_LPI Sigla da macrorregião do local provável de infecção</li>
+<li>UF_LPI: Código IBGE da Unidade Federada do local provável de infecção</li>
+<li>COD_MUN_LPI: Sigla da Unidade Federada do local provável de infecção</li>
+<li>MUN_LPI: Nome do município do local provável de infecção</li>
+<li>SEXO: Sexo do indivíduo</li>
+<li>IDADE: Idade do indivíduo</li>
+<li>DT_IS: Data de início dos sintomas do indivíduo (dd/mm/aaaa)</li>
+<li>SE_IS: Semana epidemiológica de início dos sintomas do indivíduo</li>
+<li>MES_IS: Mês de início dos sintomas do indivíduo</li>
+<li>ANO_IS: Ano de início dos sintomas do indivíduo</li>
+<li>MONITORAMENTO_IS: Período de monitoramento de início dos sintomas do indivíduo*</li>
+<li>OBITO: Evolução para o óbito</li>
+</ul></li>
+</ul>
+<section id="carregando-dados" class="level3">
+<h3 class="anchored" data-anchor-id="carregando-dados">Carregando dados</h3>
+<div id="50dbe5c4-3f66-46aa-b40a-37d501108587" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'datas/fa_train.csv'</span>, sep<span class="op">=</span><span class="st">';'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> df.copy()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'ID'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">MACRORREG_LPI</th>
+<th data-quarto-table-cell-role="th">COD_UF_LPI</th>
+<th data-quarto-table-cell-role="th">UF_LPI</th>
+<th data-quarto-table-cell-role="th">COD_MUN_LPI</th>
+<th data-quarto-table-cell-role="th">MUN_LPI</th>
+<th data-quarto-table-cell-role="th">SEXO</th>
+<th data-quarto-table-cell-role="th">IDADE</th>
+<th data-quarto-table-cell-role="th">DT_IS</th>
+<th data-quarto-table-cell-role="th">SE_IS</th>
+<th data-quarto-table-cell-role="th">MES_IS</th>
+<th data-quarto-table-cell-role="th">ANO_IS</th>
+<th data-quarto-table-cell-role="th">MONITORAMENTO_IS</th>
+<th data-quarto-table-cell-role="th">OBITO</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>N</td>
+<td>14</td>
+<td>RR</td>
+<td>140005.0</td>
+<td>Alto Alegre</td>
+<td>M</td>
+<td>NaN</td>
+<td>29/11/1994</td>
+<td>48.0</td>
+<td>11.0</td>
+<td>1994</td>
+<td>1994/1995</td>
+<td>SIM</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>N</td>
+<td>14</td>
+<td>RR</td>
+<td>140045.0</td>
+<td>Pacaraima</td>
+<td>M</td>
+<td>19</td>
+<td>19/02/1995</td>
+<td>8.0</td>
+<td>2.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>NÃO</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>NE</td>
+<td>21</td>
+<td>MA</td>
+<td>210060.0</td>
+<td>Amarante do Maranhão</td>
+<td>M</td>
+<td>32</td>
+<td>01/04/1995</td>
+<td>13.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>IGN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="6de39926-0244-42ce-ae61-7c036e2cffb3" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 2758 entries, 0 to 2757
+Data columns (total 13 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   MACRORREG_LPI     2758 non-null   object 
+ 1   COD_UF_LPI        2758 non-null   int64  
+ 2   UF_LPI            2758 non-null   object 
+ 3   COD_MUN_LPI       2751 non-null   float64
+ 4   MUN_LPI           2752 non-null   object 
+ 5   SEXO              2757 non-null   object 
+ 6   IDADE             2756 non-null   object 
+ 7   DT_IS             2753 non-null   object 
+ 8   SE_IS             2742 non-null   float64
+ 9   MES_IS            2747 non-null   float64
+ 10  ANO_IS            2758 non-null   int64  
+ 11  MONITORAMENTO_IS  2758 non-null   object 
+ 12  OBITO             2758 non-null   object 
+dtypes: float64(3), int64(2), object(8)
+memory usage: 280.2+ KB</code></pre>
+</div>
+</div>
+</section>
+<section id="funções-para-tratamento-de-dados" class="level1">
+<h1>Funções para Tratamento de Dados</h1>
+<section id="taxa-de-ocorrência-de-valores" class="level3">
+<h3 class="anchored" data-anchor-id="taxa-de-ocorrência-de-valores">Taxa de ocorrência de Valores</h3>
+<div id="09791209-08a1-4918-881f-3cbcec271868" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> t_ocorrencia(coluna):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Valores onde há ocorrência</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    valores <span class="op">=</span> <span class="bu">list</span>(coluna.value_counts().index)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quantidade de ocorrências por região</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    ocorrencia <span class="op">=</span> <span class="bu">list</span>(coluna.value_counts())</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quantidade total de ocorrências adaptado à porcentagem</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">sum</span>(ocorrencia) <span class="op">*</span> <span class="dv">100</span><span class="op">**</span>(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(valores)):</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f'- A variável </span><span class="sc">{</span>valores[i]<span class="sc">}</span><span class="ss"> representa </span><span class="sc">{</span>ocorrencia[i]<span class="op">/</span>n<span class="sc">:.2f}</span><span class="ss">% do total.'</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> i <span class="op">==</span> <span class="dv">10</span>:</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'[...]'</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span>       </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="numeralização-por-binários" class="level3">
+<h3 class="anchored" data-anchor-id="numeralização-por-binários">Numeralização por Binários</h3>
+<p>Consiste na transformação das variáveis qualitativas em binário.</p>
+<div id="607c3dc8-249c-4d29-a08f-e3a9a5501908" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Função</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> coluna_letras_para_binario(dataframe, coluna):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cria variáveis dummy para a coluna especificada</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    dummies <span class="op">=</span> pd.get_dummies(dataframe[coluna], prefix<span class="op">=</span>coluna, drop_first<span class="op">=</span><span class="va">True</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Adiciona as variáveis dummy ao DataFrame original</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    dataframe <span class="op">=</span> pd.concat([dataframe, dummies], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Remove a coluna original</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    dataframe.drop(coluna, axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="numeralização-por-percentual" class="level3">
+<h3 class="anchored" data-anchor-id="numeralização-por-percentual">Numeralização por Percentual</h3>
+<p>Consiste na transformação das variáveis qualitativas em seu percentual de aparição.</p>
+<div id="50ccbdf6-fc15-426e-8dd4-50242fed9ccc" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> coluna_letras_para_numeros(dataframe, coluna):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calcular a frequência relativa de cada categoria</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    frequencia_relativa <span class="op">=</span> dataframe[coluna].value_counts(normalize<span class="op">=</span><span class="va">True</span>).to_dict()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Substituir os valores categóricos pelos valores numéricos correspondentes</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    dataframe[coluna] <span class="op">=</span> dataframe[coluna].<span class="bu">map</span>(frequencia_relativa)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="substituição-de-nulos-por-mediana" class="level3">
+<h3 class="anchored" data-anchor-id="substituição-de-nulos-por-mediana">Substituição de nulos por mediana</h3>
+<p>Consiste na substituição dos valores nulos de uma coluna por sua mediana.</p>
+<div id="48f00f43-a3a6-4a62-a4b9-ebfb9527480c" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> substituir_nulos_por_mediana_coluna(dataframe, coluna):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calcula a mediana da coluna</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    mediana_coluna <span class="op">=</span> dataframe[coluna].median()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Substitui os valores nulos pela mediana da coluna usando loc</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    dataframe.loc[dataframe[coluna].isnull(), coluna] <span class="op">=</span> mediana_coluna</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="substituição-de-nulos-por-média" class="level3">
+<h3 class="anchored" data-anchor-id="substituição-de-nulos-por-média">Substituição de nulos por média</h3>
+<p>Consiste na substituição dos valores nulos de uma coluna por sua média.</p>
+<div id="d417bf3f-4879-4879-8c34-d40bc531b51f" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> substituir_nulos_por_media_coluna(dataframe, coluna):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calcula a media da coluna</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    media_coluna <span class="op">=</span> dataframe[coluna].mean()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Substitui os valores nulos pela mediana da coluna usando loc</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    dataframe.loc[dataframe[coluna].isnull(), coluna] <span class="op">=</span> media_coluna</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> dataframe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="k-means" class="level2">
+<h2 class="anchored" data-anchor-id="k-means">K-Means</h2>
+<div id="bf0f45c1-9cdd-4677-b6aa-fd68e431bb00" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> c_kmeans(k, df):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    km <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            init<span class="op">=</span><span class="st">'k-means++'</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>            max_iter<span class="op">=</span><span class="dv">300</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>            n_init<span class="op">=</span><span class="dv">10</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>            random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    km.fit(df)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> km</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="processamento-de-colunas" class="level1">
+<h1>Processamento de Colunas</h1>
+<section id="macrorreg_lpi" class="level3">
+<h3 class="anchored" data-anchor-id="macrorreg_lpi">‘MACRORREG_LPI’</h3>
+<p>Como dito no início do caderno, apenas a predição para a região sudeste será feita. Os motivos serão explicados a seguir, em uma análise de ocorrência por região.</p>
+<div id="814d644a-d0b6-4055-91ef-a17112c5a1a4" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regiões onde há ocorrência</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>t_ocorrencia(df[<span class="st">'MACRORREG_LPI'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- A variável SE representa 85.21% do total.
+- A variável N representa 6.78% do total.
+- A variável CO representa 5.33% do total.
+- A variável S representa 2.25% do total.
+- A variável NE representa 0.44% do total.</code></pre>
+</div>
+</div>
+<div id="1a52fada-6839-4bd5-869c-d4d9eb209a23" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">'MACRORREG_LPI'</span>, data<span class="op">=</span>df)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'MACRORREGIÃO'</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Ocorrências'</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Contagem de Ocorrências por MACRORREGIÃO'</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="obitos_por_fa_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Ao analisar a representatividade das regiões nos dados, nota-se a imensa disparidade da região sudeste com as outras. Dado que a soma das outras regiões representa menos de 15% das ocorrências, elas serão unidas em uma só. Após isso os dados da coluna serão transformados em binário visto que a coluna é qualitativa, e possuem poucos dados diferentes.</p>
+<div id="0361b26b-30d6-445e-a807-45cda510d127" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando regiões diferentes da sudeste em R que representa Restante</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">'MACRORREG_LPI'</span>] <span class="op">!=</span> <span class="st">'SE'</span>, <span class="st">'MACRORREG_LPI'</span>] <span class="op">=</span> <span class="st">'R'</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando variáveis da coluna em binário</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> coluna_letras_para_binario(df, <span class="st">'MACRORREG_LPI'</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'MACRORREG_LPI_SE'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>MACRORREG_LPI_SE
+1    2350
+0     408
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="cod_uf_lpi-e-uf_lpi" class="level3">
+<h3 class="anchored" data-anchor-id="cod_uf_lpi-e-uf_lpi">‘COD_UF_LPI’ e ‘UF_LPI’</h3>
+<p>As duas colunas representam a mesma coisa, visto que uma representa o ddd único de cada estado, e outra representa a sigla de cada estado. Como a coluna ‘UF_LPI’ possui siglas mais facilmente visualizaǘeis, ela será mantida.</p>
+<div id="04f7a43f-f289-41f0-b0fb-9a9b2a3ded88" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Excluindo coluna 'UF_LPI'</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'COD_UF_LPI'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df_final.drop(<span class="st">'COD_UF_LPI'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">MACRORREG_LPI</th>
+<th data-quarto-table-cell-role="th">UF_LPI</th>
+<th data-quarto-table-cell-role="th">COD_MUN_LPI</th>
+<th data-quarto-table-cell-role="th">MUN_LPI</th>
+<th data-quarto-table-cell-role="th">SEXO</th>
+<th data-quarto-table-cell-role="th">IDADE</th>
+<th data-quarto-table-cell-role="th">DT_IS</th>
+<th data-quarto-table-cell-role="th">SE_IS</th>
+<th data-quarto-table-cell-role="th">MES_IS</th>
+<th data-quarto-table-cell-role="th">ANO_IS</th>
+<th data-quarto-table-cell-role="th">MONITORAMENTO_IS</th>
+<th data-quarto-table-cell-role="th">OBITO</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>N</td>
+<td>RR</td>
+<td>140005.0</td>
+<td>Alto Alegre</td>
+<td>M</td>
+<td>NaN</td>
+<td>29/11/1994</td>
+<td>48.0</td>
+<td>11.0</td>
+<td>1994</td>
+<td>1994/1995</td>
+<td>SIM</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>N</td>
+<td>RR</td>
+<td>140045.0</td>
+<td>Pacaraima</td>
+<td>M</td>
+<td>19</td>
+<td>19/02/1995</td>
+<td>8.0</td>
+<td>2.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>NÃO</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>NE</td>
+<td>MA</td>
+<td>210060.0</td>
+<td>Amarante do Maranhão</td>
+<td>M</td>
+<td>32</td>
+<td>01/04/1995</td>
+<td>13.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>IGN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>NE</td>
+<td>MA</td>
+<td>210060.0</td>
+<td>Amarante do Maranhão</td>
+<td>M</td>
+<td>33</td>
+<td>03/04/1995</td>
+<td>14.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>SIM</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>N</td>
+<td>PA</td>
+<td>150270.0</td>
+<td>Conceição do Araguaia</td>
+<td>M</td>
+<td>26</td>
+<td>12/04/1995</td>
+<td>15.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>SIM</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2753</td>
+<td>2754</td>
+<td>S</td>
+<td>SC</td>
+<td>420060.0</td>
+<td>ÁGUAS MORNAS</td>
+<td>M</td>
+<td>34</td>
+<td>19/03/2021</td>
+<td>11.0</td>
+<td>3.0</td>
+<td>2021</td>
+<td>2020/2021</td>
+<td>SIM</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2754</td>
+<td>2755</td>
+<td>S</td>
+<td>SC</td>
+<td>421780.0</td>
+<td>TAIÓ</td>
+<td>F</td>
+<td>40</td>
+<td>06/01/2021</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>2021</td>
+<td>2020/2021</td>
+<td>NÃO</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2755</td>
+<td>2756</td>
+<td>N</td>
+<td>PA</td>
+<td>150030.0</td>
+<td>AFUÁ</td>
+<td>M</td>
+<td>18</td>
+<td>19/05/2021</td>
+<td>20.0</td>
+<td>5.0</td>
+<td>2021</td>
+<td>2020/2021</td>
+<td>IGN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2756</td>
+<td>2757</td>
+<td>N</td>
+<td>PA</td>
+<td>150030.0</td>
+<td>AFUÁ</td>
+<td>M</td>
+<td>21</td>
+<td>07/07/2021</td>
+<td>27.0</td>
+<td>7.0</td>
+<td>2021</td>
+<td>2021/2022</td>
+<td>SIM</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2757</td>
+<td>2758</td>
+<td>N</td>
+<td>PA</td>
+<td>150520.0</td>
+<td>OEIRAS DO PARÁ</td>
+<td>M</td>
+<td>26</td>
+<td>09/12/2021</td>
+<td>49.0</td>
+<td>12.0</td>
+<td>2021</td>
+<td>2021/2022</td>
+<td>SIM</td>
+</tr>
+</tbody>
+</table>
+
+<p>2758 rows × 13 columns</p>
+</div>
+</div>
+</div>
+<p>Por ilação lógica, se a região sudeste representa a esmagadora maioria das ocorrências, então suas microrregiões representadas pelo ddd também lideram as ocorrências, provocando uma provavel baixa representatividade das outras microrregiões. Logo, seguindo a mesma linha de pensamento das transformações anteriores, as microrregiões que possuírem baixo recorrência estatística serão unidas em uma só.</p>
+<div id="5386f28b-0581-4eff-b7dd-a2ed887c8d5d" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Microrregiões onde há ocorrência</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>t_ocorrencia(df[<span class="st">'UF_LPI'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- A variável MG representa 39.81% do total.
+- A variável SP representa 24.91% do total.
+- A variável RJ representa 11.13% do total.
+- A variável ES representa 9.35% do total.
+- A variável GO representa 3.55% do total.
+- A variável PA representa 3.44% do total.
+- A variável AM representa 1.74% do total.
+- A variável SC representa 0.98% do total.
+- A variável MT representa 0.98% do total.
+- A variável TO representa 0.83% do total.
+[...]</code></pre>
+</div>
+</div>
+<p>De forma a resumir a quantidade de microrregiões sem representatividade, as que possuírem menos de 4% de ocorrência (que curiosamente são as microrregiões que não pertencem a região sudeste) serão transformadas em apenas uma variável. Após isso elas serão transformadas em variáveis numéricas de acordo com seu percentual de ocorrência.</p>
+<div id="50073d83-98ea-4d05-bc48-0ac223373907" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando microrregiões sem representatividade em R que representa Restante</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="op">~</span>df[<span class="st">'UF_LPI'</span>].isin([<span class="st">'MG'</span>, <span class="st">'SP'</span>, <span class="st">'RJ'</span>, <span class="st">'ES'</span>]), <span class="st">'UF_LPI'</span>] <span class="op">=</span> <span class="st">'R'</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando variáveis da coluna em percentual de ocorrência</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> coluna_letras_para_numeros(df, <span class="st">'UF_LPI'</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'UF_LPI'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>UF_LPI
+0.398115    1098
+0.249094     687
+0.147933     408
+0.111313     307
+0.093546     258
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="cod_mun_lpi-e-mun_lpi" class="level3">
+<h3 class="anchored" data-anchor-id="cod_mun_lpi-e-mun_lpi">‘COD_MUN_LPI’ e ‘MUN_LPI’</h3>
+<p>Assim como no caso das microrregiões com os ddd’s, as colunas ‘COD_MUN_LPI’ e ‘MUN_LPI’ representam a mesma coisa, logo, a coluna A ‘COD_MUN_LPI’ será excluída, e a ‘MUN_LPI’ tratada.</p>
+<div id="ccaeea58-dacc-4ce0-8a5e-61ddb5e4a665" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Excluindo coluna 'UF_LPI'</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'COD_MUN_LPI'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>df_final.drop(<span class="st">'COD_MUN_LPI'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">MACRORREG_LPI</th>
+<th data-quarto-table-cell-role="th">COD_UF_LPI</th>
+<th data-quarto-table-cell-role="th">UF_LPI</th>
+<th data-quarto-table-cell-role="th">MUN_LPI</th>
+<th data-quarto-table-cell-role="th">SEXO</th>
+<th data-quarto-table-cell-role="th">IDADE</th>
+<th data-quarto-table-cell-role="th">DT_IS</th>
+<th data-quarto-table-cell-role="th">SE_IS</th>
+<th data-quarto-table-cell-role="th">MES_IS</th>
+<th data-quarto-table-cell-role="th">ANO_IS</th>
+<th data-quarto-table-cell-role="th">MONITORAMENTO_IS</th>
+<th data-quarto-table-cell-role="th">OBITO</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>N</td>
+<td>14</td>
+<td>RR</td>
+<td>Alto Alegre</td>
+<td>M</td>
+<td>NaN</td>
+<td>29/11/1994</td>
+<td>48.0</td>
+<td>11.0</td>
+<td>1994</td>
+<td>1994/1995</td>
+<td>SIM</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>N</td>
+<td>14</td>
+<td>RR</td>
+<td>Pacaraima</td>
+<td>M</td>
+<td>19</td>
+<td>19/02/1995</td>
+<td>8.0</td>
+<td>2.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>NÃO</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>NE</td>
+<td>21</td>
+<td>MA</td>
+<td>Amarante do Maranhão</td>
+<td>M</td>
+<td>32</td>
+<td>01/04/1995</td>
+<td>13.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>IGN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>NE</td>
+<td>21</td>
+<td>MA</td>
+<td>Amarante do Maranhão</td>
+<td>M</td>
+<td>33</td>
+<td>03/04/1995</td>
+<td>14.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>SIM</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>N</td>
+<td>15</td>
+<td>PA</td>
+<td>Conceição do Araguaia</td>
+<td>M</td>
+<td>26</td>
+<td>12/04/1995</td>
+<td>15.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>1994/1995</td>
+<td>SIM</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2753</td>
+<td>2754</td>
+<td>S</td>
+<td>42</td>
+<td>SC</td>
+<td>ÁGUAS MORNAS</td>
+<td>M</td>
+<td>34</td>
+<td>19/03/2021</td>
+<td>11.0</td>
+<td>3.0</td>
+<td>2021</td>
+<td>2020/2021</td>
+<td>SIM</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2754</td>
+<td>2755</td>
+<td>S</td>
+<td>42</td>
+<td>SC</td>
+<td>TAIÓ</td>
+<td>F</td>
+<td>40</td>
+<td>06/01/2021</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>2021</td>
+<td>2020/2021</td>
+<td>NÃO</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2755</td>
+<td>2756</td>
+<td>N</td>
+<td>15</td>
+<td>PA</td>
+<td>AFUÁ</td>
+<td>M</td>
+<td>18</td>
+<td>19/05/2021</td>
+<td>20.0</td>
+<td>5.0</td>
+<td>2021</td>
+<td>2020/2021</td>
+<td>IGN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2756</td>
+<td>2757</td>
+<td>N</td>
+<td>15</td>
+<td>PA</td>
+<td>AFUÁ</td>
+<td>M</td>
+<td>21</td>
+<td>07/07/2021</td>
+<td>27.0</td>
+<td>7.0</td>
+<td>2021</td>
+<td>2021/2022</td>
+<td>SIM</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2757</td>
+<td>2758</td>
+<td>N</td>
+<td>15</td>
+<td>PA</td>
+<td>OEIRAS DO PARÁ</td>
+<td>M</td>
+<td>26</td>
+<td>09/12/2021</td>
+<td>49.0</td>
+<td>12.0</td>
+<td>2021</td>
+<td>2021/2022</td>
+<td>SIM</td>
+</tr>
+</tbody>
+</table>
+
+<p>2758 rows × 13 columns</p>
+</div>
+</div>
+</div>
+<p>A coluna possui valores alguns poucos nulos. Para atribuir o valor dessas colunas, será atribuída a cidade com maior ocorrência para a UF que representa a cidade. Isso pois valores centrais como a média ou mediana não fazem sentido, visto que a coluna possui valores qualitativos e um número alto de cidades diferentes.</p>
+<div id="289409c4-8847-43c2-b0e2-da149145e523" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Checando valores nulos</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df[df[<span class="st">'MUN_LPI'</span>].isnull()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">UF_LPI</th>
+<th data-quarto-table-cell-role="th">MUN_LPI</th>
+<th data-quarto-table-cell-role="th">SEXO</th>
+<th data-quarto-table-cell-role="th">IDADE</th>
+<th data-quarto-table-cell-role="th">DT_IS</th>
+<th data-quarto-table-cell-role="th">SE_IS</th>
+<th data-quarto-table-cell-role="th">MES_IS</th>
+<th data-quarto-table-cell-role="th">ANO_IS</th>
+<th data-quarto-table-cell-role="th">MONITORAMENTO_IS</th>
+<th data-quarto-table-cell-role="th">OBITO</th>
+<th data-quarto-table-cell-role="th">MACRORREG_LPI_SE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1103</td>
+<td>0.398115</td>
+<td>NaN</td>
+<td>M</td>
+<td>17</td>
+<td>02/03/2017</td>
+<td>9.0</td>
+<td>3.0</td>
+<td>2017</td>
+<td>2016/2017</td>
+<td>IGN</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1202</td>
+<td>0.398115</td>
+<td>NaN</td>
+<td>F</td>
+<td>73</td>
+<td>30/04/2017</td>
+<td>18.0</td>
+<td>4.0</td>
+<td>2017</td>
+<td>2016/2017</td>
+<td>IGN</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1217</td>
+<td>0.398115</td>
+<td>NaN</td>
+<td>M</td>
+<td>52</td>
+<td>01/05/2017</td>
+<td>18.0</td>
+<td>5.0</td>
+<td>2017</td>
+<td>2016/2017</td>
+<td>SIM</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1241</td>
+<td>0.398115</td>
+<td>NaN</td>
+<td>M</td>
+<td>35</td>
+<td>16/01/2017</td>
+<td>3.0</td>
+<td>1.0</td>
+<td>2017</td>
+<td>2016/2017</td>
+<td>IGN</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1243</td>
+<td>0.398115</td>
+<td>NaN</td>
+<td>M</td>
+<td>21</td>
+<td>12/06/2017</td>
+<td>24.0</td>
+<td>6.0</td>
+<td>2017</td>
+<td>2016/2017</td>
+<td>IGN</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2642</td>
+<td>0.249094</td>
+<td>NaN</td>
+<td>M</td>
+<td>27</td>
+<td>31/12/2018</td>
+<td>1.0</td>
+<td>12.0</td>
+<td>2018</td>
+<td>2018/2019</td>
+<td>NÃO</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Os dois valores de ‘UF_LPI’ que possuem dados nulos são ‘0.398115’ e ‘0.249094’. Logo, serão escolhidas as cidades com mais ocorrência dessas regiões.</p>
+<div id="afe6413d-ffd2-4bec-8c5b-527eaf2752f5" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista de valores únicos do 'UF_LPI'</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'UF_LPI'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>array([0.14793328, 0.24909355, 0.39811458, 0.09354605, 0.11131255])</code></pre>
+</div>
+</div>
+<div id="7a3d4da9-fcd2-4089-846c-9f10586ca371" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ocorrências de 0.24909355</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>t_ocorrencia(df[df[<span class="st">'UF_LPI'</span>] <span class="op">==</span> df[<span class="st">'UF_LPI'</span>].unique()[<span class="dv">1</span>]][<span class="st">'MUN_LPI'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- A variável MAIRIPORÃ representa 24.34% do total.
+- A variável ATIBAIA representa 7.29% do total.
+- A variável SÃO PAULO representa 4.81% do total.
+- A variável NAZARÉ PAULISTA representa 4.66% do total.
+- A variável GUARULHOS representa 4.08% do total.
+- A variável IPORANGA representa 2.77% do total.
+- A variável ELDORADO representa 2.33% do total.
+- A variável IBIÚNA representa 2.04% do total.
+- A variável PIRAJU representa 2.04% do total.
+- A variável SANTA ISABEL representa 1.75% do total.
+[...]</code></pre>
+</div>
+</div>
+<div id="98ac2cd5-9fe6-451f-9fc3-08fd2cf0d867" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ocorrências de 0.0.39811458</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>t_ocorrencia(df[df[<span class="st">'UF_LPI'</span>] <span class="op">==</span> df[<span class="st">'UF_LPI'</span>].unique()[<span class="dv">2</span>]][<span class="st">'MUN_LPI'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- A variável LADAINHA representa 4.21% do total.
+- A variável JUIZ DE FORA representa 3.75% do total.
+- A variável MARIANA representa 3.75% do total.
+- A variável NOVA LIMA representa 3.29% do total.
+- A variável POTÉ representa 2.38% do total.
+- A variável SERRO representa 2.29% do total.
+- A variável BARÃO DE COCAIS representa 2.20% do total.
+- A variável SABINÓPOLIS representa 2.10% do total.
+- A variável NOVO CRUZEIRO representa 1.92% do total.
+- A variável TEÓFILO OTONI representa 1.74% do total.
+[...]</code></pre>
+</div>
+</div>
+<div id="ee1e8cd7-3b85-4458-8012-e5b22e309e20" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando valores nulos em cidades com mais ocorrências para cada macrorregião</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>df.loc[(df[<span class="st">'MUN_LPI'</span>].isnull()) <span class="op">&amp;</span> (df[<span class="st">'UF_LPI'</span>] <span class="op">==</span> df[<span class="st">'UF_LPI'</span>].unique()[<span class="dv">1</span>]), <span class="st">'MUN_LPI'</span>] <span class="op">=</span> <span class="bu">str</span>(<span class="st">'MAIRIPORÃ'</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>df.loc[(df[<span class="st">'MUN_LPI'</span>].isnull()) <span class="op">&amp;</span> (df[<span class="st">'UF_LPI'</span>] <span class="op">==</span> df[<span class="st">'UF_LPI'</span>].unique()[<span class="dv">2</span>]), <span class="st">'MUN_LPI'</span>] <span class="op">=</span> <span class="bu">str</span>(<span class="st">'LADAINHA'</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>df_final.loc[(df_final[<span class="st">'MUN_LPI'</span>].isnull()) <span class="op">&amp;</span> (df_final[<span class="st">'UF_LPI'</span>] <span class="op">==</span> <span class="st">'MG'</span>), <span class="st">'MUN_LPI'</span>] <span class="op">=</span> <span class="bu">str</span>(<span class="st">'MAIRIPORÃ'</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>df_final.loc[(df_final[<span class="st">'MUN_LPI'</span>].isnull()) <span class="op">&amp;</span> (df_final[<span class="st">'UF_LPI'</span>] <span class="op">==</span> <span class="st">'SP'</span>), <span class="st">'MUN_LPI'</span>] <span class="op">=</span> <span class="bu">str</span>(<span class="st">'LADAINHA'</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando variáveis da coluna em percentual de ocorrência</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> coluna_letras_para_numeros(df, <span class="st">'MUN_LPI'</span>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Valores nulos:'</span>, <span class="bu">sum</span>(df[<span class="st">'MUN_LPI'</span>].isnull()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Valores nulos: 0</code></pre>
+</div>
+</div>
+</section>
+<section id="sexo" class="level3">
+<h3 class="anchored" data-anchor-id="sexo">SEXO</h3>
+<p>A coluna sexo possui apenas duas variáveis. Logo, o único procedimento a se tomar é transformar a coluna em numérico binário.</p>
+<div id="3d68ac9e-8562-4d6c-a052-78bb6896b3de" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformação em binário</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> coluna_letras_para_binario(df, <span class="st">'SEXO'</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'SEXO_M'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>SEXO_M
+1    2281
+0     477
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="idade" class="level3">
+<h3 class="anchored" data-anchor-id="idade">IDADE</h3>
+<p>A coluna ‘IDADE’ é quantitativa, e o único problema que ela apresenta são seus valores nulos.</p>
+<div id="b674c980-7f3f-4fcf-b5e4-51b7311bcdd9" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remover vírgulas e converter para float</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'IDADE'</span>] <span class="op">=</span> df[<span class="st">'IDADE'</span>].<span class="bu">str</span>.replace(<span class="st">','</span>, <span class="st">'.'</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>df_final[<span class="st">'IDADE'</span>] <span class="op">=</span> df_final[<span class="st">'IDADE'</span>].<span class="bu">str</span>.replace(<span class="st">','</span>, <span class="st">'.'</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Existem </span><span class="sc">{</span><span class="bu">len</span>(df[<span class="st">'IDADE'</span>].value_counts())<span class="sc">}</span><span class="ss"> variáveis diferentes e </span><span class="sc">{</span>df[<span class="st">'IDADE'</span>]<span class="sc">.</span>isnull()<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss"> valores nulos."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 193 variáveis diferentes e 2 valores nulos.</code></pre>
+</div>
+</div>
+<p>Dado a existência de uma grande quantidade de variáveis, faz mais sentido preencher os valores nulos com medidas centrais.</p>
+<div id="2d519b96-2fed-40f6-a23f-820a45f26fc0" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Excluindo nulos em DataFrame teste para analisar boxplot</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>df_boxplot <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">'IDADE'</span>])</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotando o gráfico boxplot</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>plt.boxplot(df_boxplot[<span class="st">'IDADE'</span>])</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(<span class="dv">1</span>, df_boxplot[<span class="st">'IDADE'</span>].mean(), color<span class="op">=</span><span class="st">'red'</span>, marker<span class="op">=</span><span class="st">'o'</span>, s<span class="op">=</span><span class="dv">25</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>plt.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, which<span class="op">=</span><span class="st">'both'</span>, bottom<span class="op">=</span><span class="va">False</span>, top<span class="op">=</span><span class="va">False</span>, labelbottom<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Idade'</span>)</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="obitos_por_fa_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Como pode ser visto no gráfico da idade, existem poucos outliers, e uma distribuição consistente de idade. A média representada pelo ponto vermelho está em cima da linha da mediada, o que reafirma a boa distribuição dos valores. Assim sendo, para substituir os valores nulos, a medida central utilizada será a média.</p>
+<div id="d0ac18ec-25a2-4dcd-b908-65ad113cb1d8" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Substituindo nulos por média</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>substituir_nulos_por_media_coluna(df, <span class="st">'IDADE'</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>substituir_nulos_por_media_coluna(df_final, <span class="st">'IDADE'</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Valores nulos:'</span>, <span class="bu">sum</span>(df[<span class="st">'IDADE'</span>].isnull()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Valores nulos: 0</code></pre>
+</div>
+</div>
+</section>
+<section id="dt_is" class="level3">
+<h3 class="anchored" data-anchor-id="dt_is">DT_IS</h3>
+<p>A coluna ‘DT_IS’ representa a data exata dos início dos sintomas, contudo, existem outras colunas como a ‘SE_IS’, ‘MES_IS’ e ‘ANO_IS’ que separam a data em semana, mês e ano do início dos sintomas, tornando essa coluna inútil. Logo, ela será excluída.</p>
+<div id="d73bbd72-0e9c-4eda-b35c-af70f477e2ae" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Excluindo coluna 'DT_IS'</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'DT_IS'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> df_final.drop(<span class="st">'DT_IS'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="se_is" class="level3">
+<h3 class="anchored" data-anchor-id="se_is">SE_IS</h3>
+<p>A coluna ‘SEI_IS’ é numérica, e o único problema que ela apresenta são seus valores nulos.</p>
+<div id="bafc06e0-9636-4f86-9e3b-1793b9b93b42" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Existem </span><span class="sc">{</span><span class="bu">len</span>(df[<span class="st">'SE_IS'</span>].value_counts())<span class="sc">}</span><span class="ss"> variáveis diferentes e </span><span class="sc">{</span>df[<span class="st">'SE_IS'</span>]<span class="sc">.</span>isnull()<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss"> valores nulos."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 51 variáveis diferentes e 16 valores nulos.</code></pre>
+</div>
+</div>
+<p>Dado a existência de uma grande quantidade de variáveis, faz mais sentido preencher os valores nulos com medidas centrais.</p>
+<div id="02048668-6673-4b2e-9650-6496726d4cb7" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Excluindo nulos em DataFrame teste para analisar boxplot</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>df_boxplot <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">'SE_IS'</span>])</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotando o gráfico boxplot</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>))</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>plt.boxplot([df_boxplot[<span class="st">'SE_IS'</span>]])</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(<span class="dv">1</span>, df_boxplot[<span class="st">'SE_IS'</span>].mean(), color<span class="op">=</span><span class="st">'red'</span>, marker<span class="op">=</span><span class="st">'o'</span>, s<span class="op">=</span><span class="dv">25</span>)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>plt.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, which<span class="op">=</span><span class="st">'both'</span>, bottom<span class="op">=</span><span class="va">False</span>, top<span class="op">=</span><span class="va">False</span>, labelbottom<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'SE_IS'</span>)</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="obitos_por_fa_files/figure-html/cell-28-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Analisando o gráfico, fica evidente que a alta quantidade de outliers está deslocando a média significativamente da região com uma maior densidade de dados. Logo, para este caso, os valores nulos serão substituídos pela mediana.</p>
+<div id="592ac3fc-3862-4628-a8a9-098b7fbb0e19" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Substituindo nulos por mediana</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>substituir_nulos_por_mediana_coluna(df, <span class="st">'SE_IS'</span>)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>substituir_nulos_por_mediana_coluna(df_final, <span class="st">'SE_IS'</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Valores nulos:'</span>, <span class="bu">sum</span>(df[<span class="st">'SE_IS'</span>].isnull()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Valores nulos: 0</code></pre>
+</div>
+</div>
+</section>
+<section id="mes_is" class="level2">
+<h2 class="anchored" data-anchor-id="mes_is">MES_IS</h2>
+<p>A coluna ‘MES_IS’ é numérica, e o único problema que ela apresenta são seus valores nulos.</p>
+<div id="d43552b2-3247-4c7a-998a-18ba39d5cef8" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Existem </span><span class="sc">{</span><span class="bu">len</span>(df[<span class="st">'MES_IS'</span>].value_counts())<span class="sc">}</span><span class="ss"> variáveis diferentes e </span><span class="sc">{</span>df[<span class="st">'MES_IS'</span>]<span class="sc">.</span>isnull()<span class="sc">.</span><span class="bu">sum</span>()<span class="sc">}</span><span class="ss"> valores nulos."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Existem 12 variáveis diferentes e 11 valores nulos.</code></pre>
+</div>
+</div>
+<div id="915c7395-0233-4b94-9319-99b75d67d395" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ocorrências de meses</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>t_ocorrencia(df[<span class="st">'MES_IS'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>- A variável 1.0 representa 46.60% do total.
+- A variável 2.0 representa 22.35% do total.
+- A variável 3.0 representa 14.27% do total.
+- A variável 4.0 representa 6.63% do total.
+- A variável 12.0 representa 5.93% do total.
+- A variável 5.0 representa 1.78% do total.
+- A variável 6.0 representa 0.91% do total.
+- A variável 7.0 representa 0.40% do total.
+- A variável 11.0 representa 0.36% do total.
+- A variável 9.0 representa 0.33% do total.
+[...]</code></pre>
+</div>
+</div>
+<p>O mês 1 aparece com uma frequência muito alta, logo, faz mais sentido atribuir os valores nulos a ele.</p>
+<div id="5f9d8d06-26ab-4473-b671-5495a6ff4886" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando valores nulos em 1, que representa o mês de janeiro</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">'MES_IS'</span>].isna(), <span class="st">'MES_IS'</span>] <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>df_final.loc[df_final[<span class="st">'MES_IS'</span>].isna(), <span class="st">'MES_IS'</span>] <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Valores nulos:'</span>, <span class="bu">sum</span>(df[<span class="st">'MES_IS'</span>].isnull()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Valores nulos: 0</code></pre>
+</div>
+</div>
+<section id="ano_is-e-monitoramento_is" class="level3">
+<h3 class="anchored" data-anchor-id="ano_is-e-monitoramento_is">‘ANO_IS’ e ‘MONITORAMENTO_IS’</h3>
+<p>As colunas ‘ANO_IS’ e ‘MONITORAMENTO_IS’ representam objetivamente a mesma coisa, logo, por a coluna ‘ANO_IS’ já ser numérica, a coluna ‘MONITORAMENTO_IS’ será excluída.</p>
+<div id="d82d1c5a-c274-4cfc-ad09-1888787f41fa" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="st">'MONITORAMENTO_IS'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>df_final <span class="op">=</span> df_final.drop(<span class="st">'MONITORAMENTO_IS'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">UF_LPI</th>
+<th data-quarto-table-cell-role="th">MUN_LPI</th>
+<th data-quarto-table-cell-role="th">IDADE</th>
+<th data-quarto-table-cell-role="th">SE_IS</th>
+<th data-quarto-table-cell-role="th">MES_IS</th>
+<th data-quarto-table-cell-role="th">ANO_IS</th>
+<th data-quarto-table-cell-role="th">OBITO</th>
+<th data-quarto-table-cell-role="th">MACRORREG_LPI_SE</th>
+<th data-quarto-table-cell-role="th">SEXO_M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0.147933</td>
+<td>0.002175</td>
+<td>42.61543</td>
+<td>48.0</td>
+<td>11.0</td>
+<td>1994</td>
+<td>SIM</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0.147933</td>
+<td>0.000363</td>
+<td>19.00000</td>
+<td>8.0</td>
+<td>2.0</td>
+<td>1995</td>
+<td>NÃO</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0.147933</td>
+<td>0.000725</td>
+<td>32.00000</td>
+<td>13.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>IGN</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="obito" class="level3">
+<h3 class="anchored" data-anchor-id="obito">‘OBITO’</h3>
+<p>Esta é a coluna que se pretende prever, por isso, ela será dividida em duas, as que possuem uma resposta, e as que as respostas foram ignoradas. Por fim, as que possuíram respostas serão usadas para prever com base nas características das outras colunas se o indivíduo morreu ou não.</p>
+<div id="616802de-faec-4814-9a26-7a9f90747a82" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame para treino</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>df_treino <span class="op">=</span> df[df[<span class="st">'OBITO'</span>] <span class="op">!=</span> <span class="st">'IGN'</span>]</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>df_treino <span class="op">=</span> coluna_letras_para_binario(df_treino, <span class="st">'OBITO'</span>)</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="co"># DataFrame que se pretende prever</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>df_predicao <span class="op">=</span> df[df[<span class="st">'OBITO'</span>] <span class="op">==</span> <span class="st">'IGN'</span>]</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>df_predicao <span class="op">=</span> coluna_letras_para_binario(df_predicao, <span class="st">'OBITO'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="normalizando-colunas" class="level3">
+<h3 class="anchored" data-anchor-id="normalizando-colunas">Normalizando colunas</h3>
+<p>Com os dois DataFrames definidos, agora basta normalizar as colunas para que eles fiquem na mesma escala.</p>
+<div id="04a2e2de-af6e-44c4-8751-48701a420c3a" class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> MinMaxScaler</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicializa o scaler</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> MinMaxScaler()</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalizando as colunas do DataFrame</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> coluna <span class="kw">in</span> df_treino.columns:</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    df_treino[coluna] <span class="op">=</span> scaler.fit_transform(df_treino[[coluna]])</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> coluna <span class="op">!=</span> <span class="st">'OBITO_SIM'</span>:</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>        df_predicao[coluna] <span class="op">=</span> scaler.fit_transform(df_predicao[[coluna]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="predição" class="level1">
+<h1>Predição</h1>
+<section id="testando-acurácia-para-diferentes-agrupamentos" class="level3">
+<h3 class="anchored" data-anchor-id="testando-acurácia-para-diferentes-agrupamentos">Testando acurácia para diferentes agrupamentos</h3>
+<p>Para escolher o melhor modelo de acordo com o melhor agrupamento de dados, serão feitos testes que vão de 2 a 20 grupos para todos os métodos de predição, e o modelo com número de agrupamento que possuir a melhor acurácia será o escolhido.</p>
+<div id="198509b5-3fad-426d-a5b8-806da04709d9" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.exceptions <span class="im">import</span> ConvergenceWarning</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.gaussian_process <span class="im">import</span> GaussianProcessClassifier</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neural_network <span class="im">import</span> MLPClassifier</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.calibration <span class="im">import</span> CalibratedClassifierCV</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyClassifier</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> (GradientBoostingClassifier, </span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>                              BaggingClassifier, </span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>                              AdaBoostClassifier, </span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>                              ExtraTreesClassifier, </span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>                              RandomForestClassifier, </span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>                              HistGradientBoostingClassifier)</span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> (BernoulliNB, </span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>                                 CategoricalNB, </span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a>                                 ComplementNB, </span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a>                                 GaussianNB, </span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a>                                 MultinomialNB)</span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-23"><a href="#cb52-23" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.discriminant_analysis <span class="im">import</span> (LinearDiscriminantAnalysis, </span>
+<span id="cb52-24"><a href="#cb52-24" aria-hidden="true" tabindex="-1"></a>                                           QuadraticDiscriminantAnalysis)</span>
+<span id="cb52-25"><a href="#cb52-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-26"><a href="#cb52-26" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> (KNeighborsClassifier, </span>
+<span id="cb52-27"><a href="#cb52-27" aria-hidden="true" tabindex="-1"></a>                               NearestCentroid, </span>
+<span id="cb52-28"><a href="#cb52-28" aria-hidden="true" tabindex="-1"></a>                               RadiusNeighborsClassifier)</span>
+<span id="cb52-29"><a href="#cb52-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-30"><a href="#cb52-30" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> (SVC, </span>
+<span id="cb52-31"><a href="#cb52-31" aria-hidden="true" tabindex="-1"></a>                         NuSVC, </span>
+<span id="cb52-32"><a href="#cb52-32" aria-hidden="true" tabindex="-1"></a>                         LinearSVC)</span>
+<span id="cb52-33"><a href="#cb52-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-34"><a href="#cb52-34" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> (PassiveAggressiveClassifier, </span>
+<span id="cb52-35"><a href="#cb52-35" aria-hidden="true" tabindex="-1"></a>                                  Perceptron, </span>
+<span id="cb52-36"><a href="#cb52-36" aria-hidden="true" tabindex="-1"></a>                                  RidgeClassifier, </span>
+<span id="cb52-37"><a href="#cb52-37" aria-hidden="true" tabindex="-1"></a>                                  RidgeClassifierCV, </span>
+<span id="cb52-38"><a href="#cb52-38" aria-hidden="true" tabindex="-1"></a>                                  SGDClassifier)</span>
+<span id="cb52-39"><a href="#cb52-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-40"><a href="#cb52-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Separando as variáveis independentes (X) da variável dependente (y)</span></span>
+<span id="cb52-41"><a href="#cb52-41" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df_treino.drop(<span class="st">'OBITO_SIM'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb52-42"><a href="#cb52-42" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_treino[<span class="st">'OBITO_SIM'</span>]</span>
+<span id="cb52-43"><a href="#cb52-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-44"><a href="#cb52-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Dividindo o conjunto de dados em treino e teste</span></span>
+<span id="cb52-45"><a href="#cb52-45" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb52-46"><a href="#cb52-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-47"><a href="#cb52-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'|Agmts.</span><span class="ch">\t</span><span class="st">|Melhor Modelo</span><span class="ch">\t\t\t</span><span class="st">|Acrc.</span><span class="ch">\t</span><span class="st">|'</span>)</span>
+<span id="cb52-48"><a href="#cb52-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-49"><a href="#cb52-49" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>,<span class="dv">12</span>):</span>
+<span id="cb52-50"><a href="#cb52-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-51"><a href="#cb52-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Treinando o modelo KMeans apenas com as features de treino</span></span>
+<span id="cb52-52"><a href="#cb52-52" aria-hidden="true" tabindex="-1"></a>    kmeans <span class="op">=</span> c_kmeans(i, X_train)</span>
+<span id="cb52-53"><a href="#cb52-53" aria-hidden="true" tabindex="-1"></a>    X_train_clusters <span class="op">=</span> kmeans.fit_predict(X_train)</span>
+<span id="cb52-54"><a href="#cb52-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-55"><a href="#cb52-55" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Atribuindo os clusters aos dados de teste usando os centroids do modelo treinado</span></span>
+<span id="cb52-56"><a href="#cb52-56" aria-hidden="true" tabindex="-1"></a>    X_test_clusters <span class="op">=</span> kmeans.predict(X_test)</span>
+<span id="cb52-57"><a href="#cb52-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-58"><a href="#cb52-58" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Adicionando as features de cluster ao conjunto de dados de treino e teste</span></span>
+<span id="cb52-59"><a href="#cb52-59" aria-hidden="true" tabindex="-1"></a>    X_train_clustered <span class="op">=</span> pd.concat([X_train.reset_index(drop<span class="op">=</span><span class="va">True</span>), pd.get_dummies(X_train_clusters, prefix<span class="op">=</span><span class="st">'cluster'</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb52-60"><a href="#cb52-60" aria-hidden="true" tabindex="-1"></a>    X_test_clustered <span class="op">=</span> pd.concat([X_test.reset_index(drop<span class="op">=</span><span class="va">True</span>), pd.get_dummies(X_test_clusters, prefix<span class="op">=</span><span class="st">'cluster'</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb52-61"><a href="#cb52-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-62"><a href="#cb52-62" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Treinando e avaliando modelos</span></span>
+<span id="cb52-63"><a href="#cb52-63" aria-hidden="true" tabindex="-1"></a>    models <span class="op">=</span> {    </span>
+<span id="cb52-64"><a href="#cb52-64" aria-hidden="true" tabindex="-1"></a>        <span class="st">'GradientBoostingClassifier'</span>: GradientBoostingClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-65"><a href="#cb52-65" aria-hidden="true" tabindex="-1"></a>        <span class="st">'AdaBoostClassifier'</span>: AdaBoostClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-66"><a href="#cb52-66" aria-hidden="true" tabindex="-1"></a>        <span class="st">'BaggingClassifier'</span>: BaggingClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-67"><a href="#cb52-67" aria-hidden="true" tabindex="-1"></a>        <span class="st">'ExtraTreesClassifier'</span>: ExtraTreesClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-68"><a href="#cb52-68" aria-hidden="true" tabindex="-1"></a>        <span class="st">'RandomForestClassifier'</span>: RandomForestClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-69"><a href="#cb52-69" aria-hidden="true" tabindex="-1"></a>        <span class="st">'HistGradientBoostingClassifier'</span>: HistGradientBoostingClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-70"><a href="#cb52-70" aria-hidden="true" tabindex="-1"></a>        <span class="st">'BernoulliNB'</span>: BernoulliNB(),</span>
+<span id="cb52-71"><a href="#cb52-71" aria-hidden="true" tabindex="-1"></a>        <span class="st">'CategoricalNB'</span>: CategoricalNB(),</span>
+<span id="cb52-72"><a href="#cb52-72" aria-hidden="true" tabindex="-1"></a>        <span class="st">'ComplementNB'</span>: ComplementNB(),</span>
+<span id="cb52-73"><a href="#cb52-73" aria-hidden="true" tabindex="-1"></a>        <span class="st">'GaussianNB'</span>: GaussianNB(),</span>
+<span id="cb52-74"><a href="#cb52-74" aria-hidden="true" tabindex="-1"></a>        <span class="st">'MultinomialNB'</span>: MultinomialNB(),</span>
+<span id="cb52-75"><a href="#cb52-75" aria-hidden="true" tabindex="-1"></a>        <span class="st">'CalibratedClassifierCV'</span>: CalibratedClassifierCV(),</span>
+<span id="cb52-76"><a href="#cb52-76" aria-hidden="true" tabindex="-1"></a>        <span class="st">'LinearDiscriminantAnalysis'</span>: LinearDiscriminantAnalysis(),</span>
+<span id="cb52-77"><a href="#cb52-77" aria-hidden="true" tabindex="-1"></a>        <span class="st">'QuadraticDiscriminantAnalysis'</span>: QuadraticDiscriminantAnalysis(),</span>
+<span id="cb52-78"><a href="#cb52-78" aria-hidden="true" tabindex="-1"></a>        <span class="st">'KNeighborsClassifier'</span>: KNeighborsClassifier(),</span>
+<span id="cb52-79"><a href="#cb52-79" aria-hidden="true" tabindex="-1"></a>        <span class="st">'NearestCentroid'</span>: NearestCentroid(),</span>
+<span id="cb52-80"><a href="#cb52-80" aria-hidden="true" tabindex="-1"></a>        <span class="st">'RadiusNeighborsClassifier'</span>: RadiusNeighborsClassifier(),</span>
+<span id="cb52-81"><a href="#cb52-81" aria-hidden="true" tabindex="-1"></a>        <span class="st">'SVC'</span>: SVC(),</span>
+<span id="cb52-82"><a href="#cb52-82" aria-hidden="true" tabindex="-1"></a>        <span class="st">'NuSVC'</span>: NuSVC(),</span>
+<span id="cb52-83"><a href="#cb52-83" aria-hidden="true" tabindex="-1"></a>        <span class="st">'LinearSVC'</span>: LinearSVC(),</span>
+<span id="cb52-84"><a href="#cb52-84" aria-hidden="true" tabindex="-1"></a>        <span class="st">'GaussianProcessClassifier'</span>: GaussianProcessClassifier(),</span>
+<span id="cb52-85"><a href="#cb52-85" aria-hidden="true" tabindex="-1"></a>        <span class="st">'MLPClassifier'</span>: MLPClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-86"><a href="#cb52-86" aria-hidden="true" tabindex="-1"></a>        <span class="st">'PassiveAggressiveClassifier'</span>: PassiveAggressiveClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-87"><a href="#cb52-87" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Perceptron'</span>: Perceptron(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-88"><a href="#cb52-88" aria-hidden="true" tabindex="-1"></a>        <span class="st">'RidgeClassifier'</span>: RidgeClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-89"><a href="#cb52-89" aria-hidden="true" tabindex="-1"></a>        <span class="st">'RidgeClassifierCV'</span>: RidgeClassifierCV(),</span>
+<span id="cb52-90"><a href="#cb52-90" aria-hidden="true" tabindex="-1"></a>        <span class="st">'SGDClassifier'</span>: SGDClassifier(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb52-91"><a href="#cb52-91" aria-hidden="true" tabindex="-1"></a>        <span class="st">'DummyClassifier'</span>: DummyClassifier(),</span>
+<span id="cb52-92"><a href="#cb52-92" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb52-93"><a href="#cb52-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-94"><a href="#cb52-94" aria-hidden="true" tabindex="-1"></a>    melhor_modelo <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb52-95"><a href="#cb52-95" aria-hidden="true" tabindex="-1"></a>    melhor_acuracia <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb52-96"><a href="#cb52-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-97"><a href="#cb52-97" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name, model <span class="kw">in</span> models.items():</span>
+<span id="cb52-98"><a href="#cb52-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-99"><a href="#cb52-99" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Ignorando avisos        </span></span>
+<span id="cb52-100"><a href="#cb52-100" aria-hidden="true" tabindex="-1"></a>        warnings.filterwarnings(<span class="st">"ignore"</span>, category<span class="op">=</span><span class="pp">FutureWarning</span>, message<span class="op">=</span><span class="st">"The SAMME.R algorithm*"</span>)</span>
+<span id="cb52-101"><a href="#cb52-101" aria-hidden="true" tabindex="-1"></a>        warnings.filterwarnings(<span class="st">"ignore"</span>, category<span class="op">=</span><span class="pp">FutureWarning</span>, message<span class="op">=</span><span class="st">"The default value of `dual` will change*"</span>)</span>
+<span id="cb52-102"><a href="#cb52-102" aria-hidden="true" tabindex="-1"></a>        warnings.filterwarnings(<span class="st">"ignore"</span>, category<span class="op">=</span><span class="pp">UserWarning</span>, message<span class="op">=</span><span class="st">"Variables are collinear*"</span>)</span>
+<span id="cb52-103"><a href="#cb52-103" aria-hidden="true" tabindex="-1"></a>        warnings.filterwarnings(<span class="st">"ignore"</span>, category<span class="op">=</span>ConvergenceWarning, message<span class="op">=</span><span class="st">"Stochastic Optimizer: Maximum iterations*"</span>)</span>
+<span id="cb52-104"><a href="#cb52-104" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb52-105"><a href="#cb52-105" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb52-106"><a href="#cb52-106" aria-hidden="true" tabindex="-1"></a>            model.fit(X_train_clustered, y_train)</span>
+<span id="cb52-107"><a href="#cb52-107" aria-hidden="true" tabindex="-1"></a>            y_pred <span class="op">=</span> model.predict(X_test_clustered)</span>
+<span id="cb52-108"><a href="#cb52-108" aria-hidden="true" tabindex="-1"></a>            accuracy <span class="op">=</span> accuracy_score(y_test, y_pred)</span>
+<span id="cb52-109"><a href="#cb52-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-110"><a href="#cb52-110" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> accuracy <span class="op">&gt;</span> melhor_acuracia:</span>
+<span id="cb52-111"><a href="#cb52-111" aria-hidden="true" tabindex="-1"></a>                melhor_acuracia <span class="op">=</span> accuracy</span>
+<span id="cb52-112"><a href="#cb52-112" aria-hidden="true" tabindex="-1"></a>                melhor_modelo <span class="op">=</span> name</span>
+<span id="cb52-113"><a href="#cb52-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-114"><a href="#cb52-114" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb52-115"><a href="#cb52-115" aria-hidden="true" tabindex="-1"></a>            <span class="cf">pass</span></span>
+<span id="cb52-116"><a href="#cb52-116" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb52-117"><a href="#cb52-117" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'|</span><span class="sc">{</span>i<span class="sc">}</span><span class="ch">\t</span><span class="ss">|</span><span class="sc">{</span>melhor_modelo<span class="sc">}</span><span class="ch">\t</span><span class="ss">|</span><span class="sc">{</span>melhor_acuracia<span class="sc">:.4f}</span><span class="ch">\t</span><span class="ss">|'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>|Agmts. |Melhor Modelo          |Acrc.  |
+|2  |HistGradientBoostingClassifier |0.6729 |
+|3  |GradientBoostingClassifier |0.6667 |
+|4  |HistGradientBoostingClassifier |0.6654 |
+|5  |HistGradientBoostingClassifier |0.6891 |
+|6  |HistGradientBoostingClassifier |0.6754 |
+|7  |HistGradientBoostingClassifier |0.6717 |
+|8  |HistGradientBoostingClassifier |0.6667 |
+|9  |GradientBoostingClassifier |0.6642 |
+|10 |RadiusNeighborsClassifier  |0.6679 |
+|11 |RadiusNeighborsClassifier  |0.6679 |</code></pre>
+</div>
+</div>
+</section>
+<section id="treinando-e-realizando-predição" class="level3">
+<h3 class="anchored" data-anchor-id="treinando-e-realizando-predição">Treinando e realizando Predição</h3>
+<p>Como pode ser visto, o modelo ‘HistGradientBoostingClassifier’ com 5 grupos foi o que obteve o melhor resultado, logo, será o utilizado.</p>
+<div id="2b1360cc" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Separando as variáveis independentes (X) da variável dependente (y) do modelo de treino</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> df_treino.drop(<span class="st">'OBITO_SIM'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> df_treino[<span class="st">'OBITO_SIM'</span>]</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Definindo variáveis independentes (X) do modelo de predição</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>X_predt <span class="op">=</span> df_predicao</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Treinando o modelo KMeans</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>kmeans <span class="op">=</span> c_kmeans(<span class="dv">5</span>, X_train)</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>X_train_clusters <span class="op">=</span> kmeans.fit_predict(X_train)</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>X_predt_clusters <span class="op">=</span> kmeans.fit_predict(X_predt)</span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando as features de cluster ao conjunto de dados de treino e teste</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>X_train_clustered <span class="op">=</span> pd.concat([X_train.reset_index(drop<span class="op">=</span><span class="va">True</span>), pd.get_dummies(X_train_clusters, prefix<span class="op">=</span><span class="st">'cluster'</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>X_predt_clustered <span class="op">=</span> pd.concat([X_predt.reset_index(drop<span class="op">=</span><span class="va">True</span>), pd.get_dummies(X_predt_clusters, prefix<span class="op">=</span><span class="st">'cluster'</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Treinando modelos</span></span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>models <span class="op">=</span> {<span class="st">'HistGradientBoostingClassifier'</span>: HistGradientBoostingClassifier(random_state<span class="op">=</span><span class="dv">42</span>),}</span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>model.fit(X_train_clustered, y)</span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_predt_clustered)</span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando valores preditos ao DataFrame de predição</span></span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a>df_predicao[<span class="st">'OBITO_SIM'</span>] <span class="op">=</span> y_pred</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Por fim, basta obter o DataFrame final, com todos os dados prontos.</p>
+<div id="fb2de3fa" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Adicionando resultados à coluna 'OBITO'</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>df_final.loc[df_final.index.intersection(df_treino.index), <span class="st">'OBITO'</span>] <span class="op">=</span> df_treino[<span class="st">'OBITO_SIM'</span>]</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>df_final.loc[df_final.index.intersection(df_predicao.index), <span class="st">'OBITO'</span>] <span class="op">=</span> df_predicao[<span class="st">'OBITO_SIM'</span>]</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertendo resultados</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>df_final[<span class="st">'OBITO'</span>] <span class="op">=</span> df_final[<span class="st">'OBITO'</span>].<span class="bu">map</span>({<span class="fl">0.0</span>: <span class="st">'Não'</span>, <span class="fl">1.0</span>: <span class="st">'Sim'</span>})</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Exportando arquivo para .CSV</span></span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>df_final.to_csv(<span class="st">'output.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>df_final</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ID</th>
+<th data-quarto-table-cell-role="th">MACRORREG_LPI</th>
+<th data-quarto-table-cell-role="th">COD_UF_LPI</th>
+<th data-quarto-table-cell-role="th">UF_LPI</th>
+<th data-quarto-table-cell-role="th">COD_MUN_LPI</th>
+<th data-quarto-table-cell-role="th">MUN_LPI</th>
+<th data-quarto-table-cell-role="th">SEXO</th>
+<th data-quarto-table-cell-role="th">IDADE</th>
+<th data-quarto-table-cell-role="th">SE_IS</th>
+<th data-quarto-table-cell-role="th">MES_IS</th>
+<th data-quarto-table-cell-role="th">ANO_IS</th>
+<th data-quarto-table-cell-role="th">OBITO</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>N</td>
+<td>14</td>
+<td>RR</td>
+<td>140005.0</td>
+<td>Alto Alegre</td>
+<td>M</td>
+<td>42.61543</td>
+<td>48.0</td>
+<td>11.0</td>
+<td>1994</td>
+<td>Sim</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>N</td>
+<td>14</td>
+<td>RR</td>
+<td>140045.0</td>
+<td>Pacaraima</td>
+<td>M</td>
+<td>19.00000</td>
+<td>8.0</td>
+<td>2.0</td>
+<td>1995</td>
+<td>Não</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>NE</td>
+<td>21</td>
+<td>MA</td>
+<td>210060.0</td>
+<td>Amarante do Maranhão</td>
+<td>M</td>
+<td>32.00000</td>
+<td>13.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>Não</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>NE</td>
+<td>21</td>
+<td>MA</td>
+<td>210060.0</td>
+<td>Amarante do Maranhão</td>
+<td>M</td>
+<td>33.00000</td>
+<td>14.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>Sim</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>N</td>
+<td>15</td>
+<td>PA</td>
+<td>150270.0</td>
+<td>Conceição do Araguaia</td>
+<td>M</td>
+<td>26.00000</td>
+<td>15.0</td>
+<td>4.0</td>
+<td>1995</td>
+<td>Sim</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2753</td>
+<td>2754</td>
+<td>S</td>
+<td>42</td>
+<td>SC</td>
+<td>420060.0</td>
+<td>ÁGUAS MORNAS</td>
+<td>M</td>
+<td>34.00000</td>
+<td>11.0</td>
+<td>3.0</td>
+<td>2021</td>
+<td>Sim</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2754</td>
+<td>2755</td>
+<td>S</td>
+<td>42</td>
+<td>SC</td>
+<td>421780.0</td>
+<td>TAIÓ</td>
+<td>F</td>
+<td>40.00000</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>2021</td>
+<td>Não</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2755</td>
+<td>2756</td>
+<td>N</td>
+<td>15</td>
+<td>PA</td>
+<td>150030.0</td>
+<td>AFUÁ</td>
+<td>M</td>
+<td>18.00000</td>
+<td>20.0</td>
+<td>5.0</td>
+<td>2021</td>
+<td>Não</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2756</td>
+<td>2757</td>
+<td>N</td>
+<td>15</td>
+<td>PA</td>
+<td>150030.0</td>
+<td>AFUÁ</td>
+<td>M</td>
+<td>21.00000</td>
+<td>27.0</td>
+<td>7.0</td>
+<td>2021</td>
+<td>Sim</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2757</td>
+<td>2758</td>
+<td>N</td>
+<td>15</td>
+<td>PA</td>
+<td>150520.0</td>
+<td>OEIRAS DO PARÁ</td>
+<td>M</td>
+<td>26.00000</td>
+<td>49.0</td>
+<td>12.0</td>
+<td>2021</td>
+<td>Sim</td>
+</tr>
+</tbody>
+</table>
+
+<p>2758 rows × 12 columns</p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

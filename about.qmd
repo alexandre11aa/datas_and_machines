@@ -1,0 +1,7 @@
+---
+title: "About"
+---
+
+Livro desenvolvido por Alexandre Estrela de Lacerda Nobrega.
+
+Para mais informações sobre o livro acesse <https://github.com/alexandre11aa/datas_and_machines>.
