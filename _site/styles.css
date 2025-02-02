@@ -74,3 +74,11 @@ html {
     top: 0;
     left: 0;
 }
+
+a {
+    color: rgb(182, 182, 182); /* Muda a cor do link para branco */
+}
+
+a:hover {
+    color: rgb(182, 182, 182); /* Muda a cor quando o link é passado com o mouse (opcional) */
+}

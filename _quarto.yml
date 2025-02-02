@@ -11,108 +11,105 @@ website:
       - href: index.qmd
         text: Introdução
 
-      - section: "Pré-processamento"
+      - section: "1. Pré-processamento"
         contents:
           - href: notebooks/preprocessing/separacao_de_dados_treinamento_validacao_teste.ipynb
-            text: Separação de Dados para Treino, Verificação e Teste
+            text: 1.1 Separação de Dados para Treino, Verificação e Teste
           - href: notebooks/preprocessing/deteccao_e_exclusao_de_dados_duplicados.ipynb
-            text: Detecção e Exclusão de Dados Duplicados
+            text: 1.2 Detecção e Exclusão de Dados Duplicados
           - href: notebooks/preprocessing/tratamento_de_valores_ausentes.ipynb
-            text: Tratamento de Valores Ausentes com Algoritmos de Imputação
+            text: 1.3 Tratamento de Valores Ausentes com Algoritmos de Imputação
           - href: notebooks/preprocessing/substituicao_por_medidas_centrais.ipynb
-            text: Substituição de Outliers por Medidas Centrais
+            text: 1.4 Substituição de Outliers por Medidas Centrais
           - href: notebooks/preprocessing/numeralizacao_de_variaveis_categoricas.ipynb
-            text: Numeralização de Variáveis Categóricas
+            text: 1.5 Numeralização de Variáveis Categóricas
           - href: notebooks/preprocessing/normalizacao_de_dados.ipynb
-            text: Normalização de Dados Quantitativos
+            text: 1.6 Normalização de Dados Quantitativos
           - href: notebooks/preprocessing/geracao_de_atributos_sinteticos.ipynb
-            text: Geração de Atributos Sintéticos
+            text: 1.7 Geração de Atributos Sintéticos
           - href: notebooks/preprocessing/verificacao_de_normalidade_dos_dados.ipynb
-            text: Verificação de Normalidade dos Dados
+            text: 1.8 Verificação de Normalidade dos Dados
           - href: notebooks/preprocessing/deteccao_de_colinearidade_e_multicolinearidade.ipynb
-            text: Detecção de Colinearidade e Multicolinearidade
+            text: 1.9 Detecção de Colinearidade e Multicolinearidade
           - href: notebooks/preprocessing/selecao_de_atributos_com_metodos_baseados_em_importancia.ipynb
-            text: Seleção de Atributos com Métodos Baseados em Importância
+            text: 1.10 Seleção de Atributos com Métodos Baseados em Importância
           - href: notebooks/preprocessing/analise_de_componentes_principais_pca.ipynb
-            text: Análise de Componentes Principais (PCA)
+            text: 1.11 Análise de Componentes Principais (PCA)
           - href: notebooks/preprocessing/uso_de_auto_machine_learning_para_preprocessamento.ipynb
-            text: Uso de Auto Machine Learning para Pré-processamento
+            text: 1.12 Uso de Auto Machine Learning para Pré-processamento
 
-      - section: "Aprendizado Supervisionado"
+      - section: "2. Aprendizado Supervisionado"
         contents:
-        - href: notebooks/supervised/validacao_cruzada_para_modelos_supervisionados.ipynb
-          text: Validação Cruzada para Modelos Supervisionados
-        - href: notebooks/supervised/metricas_para_modelos_de_regressao_e_classificacao.ipynb
-          text: Métricas para Modelos de Regressão e Classificação
-        - href: notebooks/supervised/tecnicas_de_balanceamento_de_classes.ipynb
-          text: Técnicas de Balanceamento de Classes
-        - href: notebooks/supervised/treinamento_de_modelos_de_regressao.ipynb
-          text: Treinamento de Modelos de Regressão
-        - href: notebooks/supervised/treinamento_de_modelos_de_classificacao.ipynb
-          text: Treinamento de Modelos de Classificação
+          - href: notebooks/supervised/validacao_cruzada_para_modelos_supervisionados.ipynb
+            text: 2.1 Validação Cruzada para Modelos Supervisionados
+          - href: notebooks/supervised/metricas_para_modelos_de_regressao_e_classificacao.ipynb
+            text: 2.2 Métricas para Modelos de Regressão e Classificação
+          - href: notebooks/supervised/tecnicas_de_balanceamento_de_classes.ipynb
+            text: 2.3 Técnicas de Balanceamento de Classes
+          - href: notebooks/supervised/treinamento_de_modelos_de_regressao.ipynb
+            text: 2.4 Treinamento de Modelos de Regressão
+          - href: notebooks/supervised/treinamento_de_modelos_de_classificacao.ipynb
+            text: 2.5 Treinamento de Modelos de Classificação
 
-      - section: "Aprendizado Não Supervisionado"
+      - section: "3. Aprendizado Não Supervisionado"
         contents:
-        - href: notebooks/unsupervised/agrupamento_de_dados.ipynb
-          text: Agrupamento de Dados Quantitativos
-        - href: notebooks/unsupervised/analises_de_agrupamentos.ipynb
-          text: Análises de Agrupamentos
-        - href: notebooks/unsupervised/algoritmos_de_agrupamento_hierarquico.ipynb
-          text: Algoritmos de Agrupamento Hierárquico
-        - href: notebooks/unsupervised/avaliacao_de_qualidade_de_agrupamento.ipynb
-          text: Avaliação de Qualidade de Agrupamento
-        - href: notebooks/unsupervised/deteccao_de_anomalias_em_clusters.ipynb
-          text: Detecção de Anomalias em Clusters
-        
-      - section: "Processamento de Linguagem Natural"
-        contents:
-        - href: notebooks/nlp/limpeza_de_texto.ipynb
-          text: Limpeza de Texto
-        - href: notebooks/nlp/vetorizacao_de_texto.ipynb
-          text: Vetorização de Texto
-        - href: notebooks/nlp/frequencia_e_nuvem_de_palavras.ipynb
-          text: Frequência e Nuvem de Palavras
-        - href: notebooks/nlp/lematizacao_e_stemming.ipynb
-          text: Lematização e Stemming
-        - href: notebooks/nlp/funcoes_de_rotulagem.ipynb
-          text: Funções de Rotulagem
-        - href: notebooks/nlp/criacao_de_modelos_de_topicos_com_lda_e_nmf.ipynb
-          text: Criação de Modelos de Tópicos com LDA e NMF
-        - href: notebooks/nlp/classificacao_de_sentimentos.ipynb
-          text: Classificação de Sentimentos
-      
-      - section: "Visão Computacional"
-        contents:
-        - href: notebooks/vision/manipulacao_e_visualizacao_de_imagem.ipynb
-          text: Manipulação e Visualização de Imagem
-        - href: notebooks/vision/deteccao_de_bordas_em_imagens.ipynb
-          text: Detecção de Bordas em Imagens
-        - href: notebooks/vision/segmentacao_de_imagens.ipynb
-          text: Segmentação de Imagens
-        - href: notebooks/vision/realce_de_regioes_de_interesse.ipynb
-          text: Realce de Regiões de Interesse
-        - href: notebooks/vision/deteccao_de_espectro_de_cores.ipynb
-          text: Detecção de Espectro de Cores
-        - href: notebooks/vision/classificacao_de_objetos_em_imagens.ipynb
-          text: Classificação de Objetos em Imagens
+          - href: notebooks/unsupervised/agrupamento_de_dados.ipynb
+            text: 3.1 Agrupamento de Dados Quantitativos
+          - href: notebooks/unsupervised/analises_de_agrupamentos.ipynb
+            text: 3.2 Análises de Agrupamentos
+          - href: notebooks/unsupervised/algoritmos_de_agrupamento_hierarquico.ipynb
+            text: 3.3 Algoritmos de Agrupamento Hierárquico
+          - href: notebooks/unsupervised/avaliacao_de_qualidade_de_agrupamento.ipynb
+            text: 3.4 Avaliação de Qualidade de Agrupamento
+          - href: notebooks/unsupervised/deteccao_de_anomalias_em_clusters.ipynb
+            text: 3.5 Detecção de Anomalias em Clusters
 
-      - section: "Estudos de Caso e Aplicação Prática"
+      - section: "4. Processamento de Linguagem Natural"
         contents:
-        - href: notebooks/studies/titanic/titanic.ipynb
-          text: Titanic
-        - href: notebooks/studies/dont_overfit_ii/dont_overfit_ii.ipynb
-          text: Dont Overfit II
-        - href: notebooks/studies/obitos_por_fa/obitos_por_fa.ipynb
-          text: Óbitos por Febre Amarela no Brasil
-        - href: notebooks/studies/digit_recognizer/digit_recognizer.ipynb
-          text: Digit Recognizer
-        - href: notebooks/studies/toxic_tweets/toxic_tweets.ipynb
-          text: Toxic Tweets
-        - href: notebooks/studies/areas_verdes/final_project.ipynb
-          text: Detecção e Quantificação de Áreas Verdes
+          - href: notebooks/nlp/limpeza_de_texto.ipynb
+            text: 4.1 Limpeza de Texto
+          - href: notebooks/nlp/vetorizacao_de_texto.ipynb
+            text: 4.2 Vetorização de Texto
+          - href: notebooks/nlp/frequencia_e_nuvem_de_palavras.ipynb
+            text: 4.3 Frequência e Nuvem de Palavras
+          - href: notebooks/nlp/lematizacao_e_stemming.ipynb
+            text: 4.4 Lematização e Stemming
+          - href: notebooks/nlp/funcoes_de_rotulagem.ipynb
+            text: 4.5 Funções de Rotulagem
+          - href: notebooks/nlp/criacao_de_modelos_de_topicos_com_lda_e_nmf.ipynb
+            text: 4.6 Criação de Modelos de Tópicos com LDA e NMF
+          - href: notebooks/nlp/classificacao_de_sentimentos.ipynb
+            text: 4.7 Classificação de Sentimentos
 
-      - href: about.qmd
-        text: Sobre
+      - section: "5. Visão Computacional"
+        contents:
+          - href: notebooks/vision/manipulacao_e_visualizacao_de_imagem.ipynb
+            text: 5.1 Manipulação e Visualização de Imagem
+          - href: notebooks/vision/deteccao_de_bordas_em_imagens.ipynb
+            text: 5.2 Detecção de Bordas em Imagens
+          - href: notebooks/vision/segmentacao_de_imagens.ipynb
+            text: 5.3 Segmentação de Imagens
+          - href: notebooks/vision/realce_de_regioes_de_interesse.ipynb
+            text: 5.4 Realce de Regiões de Interesse
+          - href: notebooks/vision/deteccao_de_espectro_de_cores.ipynb
+            text: 5.5 Detecção de Espectro de Cores
+          - href: notebooks/vision/classificacao_de_objetos_em_imagens.ipynb
+            text: 5.6 Classificação de Objetos em Imagens
+
+      - section: "6. Estudos de Caso e Aplicação Prática"
+        contents:
+          - href: notebooks/studies/titanic/titanic.ipynb
+            text: 6.1 Titanic
+          - href: notebooks/studies/dont_overfit_ii/dont_overfit_ii.ipynb
+            text: 6.2 Dont Overfit II
+          - href: notebooks/studies/obitos_por_fa/obitos_por_fa.ipynb
+            text: 6.3 Óbitos por Febre Amarela no Brasil
+          - href: notebooks/studies/digit_recognizer/digit_recognizer.ipynb
+            text: 6.4 Digit Recognizer
+          - href: notebooks/studies/toxic_tweets/toxic_tweets.ipynb
+            text: 6.5 Toxic Tweets
+          - href: notebooks/studies/areas_verdes/final_project.ipynb
+            text: 6.6 Detecção e Quantificação de Áreas Verdes
 
 format:
   html:

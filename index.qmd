@@ -1,3 +1,74 @@
 ---
 title: "Aprendendo com Dados e Máquinas"
 ---
+
+# Introdução
+
+O livro foi desenvolvido com o intuito de compilar bons algoritmos de tratamento de dados e aprendizado de máquinas. A teoria por trás dos algoritmos é introduzida de forma resumida e concisa, de forma que o maior infoque seja na sua implementação com conteúdo mais voltado para uso prático.
+
+A construção do livro se dá a partir de cadernos (notebooks) desenvolvidos com a linguagem de programação Python. As bibliotecas usadas sempre são especificadas nos cadernos, e cada um deles trata de um tema que pode ser lido de maneira independente. Contudo, recomenda-se para um maior entendimento a leitura linear do livro.
+
+# Cadernos
+
+Para acessar os cadernos de forma a baixá-los e executá-los, basta seguir seus respectivos caminhos do repositório.
+
+1. **Pré-processamento**
+   - [1.1 Separação de Dados para Treino, Verificação e Teste](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/separacao_de_dados_treinamento_validacao_teste.ipynb)
+   - [1.2 Detecção e Exclusão de Dados Duplicados](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/deteccao_e_exclusao_de_dados_duplicados.ipynb)
+   - [1.3 Tratamento de Valores Ausentes com Algoritmos de Imputação](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/tratamento_de_valores_ausentes.ipynb)
+   - [1.4 Substituição de Outliers por Medidas Centrais](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/substituicao_por_medidas_centrais.ipynb)
+   - [1.5 Numeralização de Variáveis Categóricas](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/numeralizacao_de_variaveis_categoricas.ipynb)
+   - [1.6 Normalização de Dados Quantitativos](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/normalizacao_de_dados.ipynb)
+   - [1.7 Geração de Atributos Sintéticos *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/geracao_de_atributos_sinteticos.ipynb)
+   - [1.8 Verificação de Normalidade dos Dados *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/verificacao_de_normalidade_dos_dados.ipynb)
+   - [1.9 Detecção de Colinearidade e Multicolinearidade *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/deteccao_de_colinearidade_e_multicolinearidade.ipynb)
+   - [1.10 Seleção de Atributos com Métodos Baseados em Importância *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/selecao_de_atributos_com_metodos_baseados_em_importancia.ipynb)
+   - [1.11 Análise de Componentes Principais (PCA) *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/analise_de_componentes_principais_pca.ipynb)
+   - [1.12 Uso de Auto Machine Learning para Pré-processamento *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/preprocessing/uso_de_auto_machine_learning_para_preprocessamento.ipynb)
+
+2. **Aprendizado Supervisionado**
+   - [2.1 Validação Cruzada para Modelos Supervisionados *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/supervised/validacao_cruzada_para_modelos_supervisionados.ipynb)
+   - [2.2 Métricas para Modelos de Regressão e Classificação *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/supervised/metricas_para_modelos_de_regressao_e_classificacao.ipynb)
+   - [2.3 Técnicas de Balanceamento de Classes *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/supervised/tecnicas_de_balanceamento_de_classes.ipynb)
+   - [2.4 Treinamento de Modelos de Regressão *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/supervised/treinamento_de_modelos_de_regressao.ipynb)
+   - [2.5 Treinamento de Modelos de Classificação *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/supervised/treinamento_de_modelos_de_classificacao.ipynb)
+
+3. **Aprendizado Não Supervisionado**
+   - [3.1 Agrupamento de Dados Quantitativos](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/unsupervised/agrupamento_de_dados.ipynb)
+   - [3.2 Análises de Agrupamentos](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/unsupervised/analises_de_agrupamentos.ipynb)
+   - [3.3 Algoritmos de Agrupamento Hierárquico *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/unsupervised/algoritmos_de_agrupamento_hierarquico.ipynb)
+   - [3.4 Avaliação de Qualidade de Agrupamento *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/unsupervised/avaliacao_de_qualidade_de_agrupamento.ipynb)
+   - [3.5 Detecção de Anomalias em Clusters *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/unsupervised/deteccao_de_anomalias_em_clusters.ipynb)
+
+4. **Processamento de Linguagem Natural**
+   - [4.1 Limpeza de Texto](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/nlp/limpeza_de_texto.ipynb)
+   - [4.2 Vetorização de Texto](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/nlp/vetorizacao_de_texto.ipynb)
+   - [4.3 Frequência e Nuvem de Palavras *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/nlp/frequencia_e_nuvem_de_palavras.ipynb)
+   - [4.4 Lematização e Stemming *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/nlp/lematizacao_e_stemming.ipynb)
+   - [4.5 Funções de Rotulagem *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/nlp/funcoes_de_rotulagem.ipynb)
+   - [4.6 Criação de Modelos de Tópicos com LDA e NMF *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/nlp/criacao_de_modelos_de_topicos_com_lda_e_nmf.ipynb)
+   - [4.7 Classificação de Sentimentos *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/nlp/classificacao_de_sentimentos.ipynb)
+
+5. **Visão Computacional**
+   - [5.1 Manipulação e Visualização de Imagem *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/vision/manipulacao_e_visualizacao_de_imagem.ipynb)
+   - [5.2 Detecção de Bordas em Imagens *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/vision/deteccao_de_bordas_em_imagens.ipynb)
+   - [5.3 Segmentação de Imagens *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/vision/segmentacao_de_imagens.ipynb)
+   - [5.4 Realce de Regiões de Interesse *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/vision/realce_de_regioes_de_interesse.ipynb)
+   - [5.5 Detecção de Espectro de Cores *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/vision/deteccao_de_espectro_de_cores.ipynb)
+   - [5.6 Classificação de Objetos em Imagens *(Em manutenção)*](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/vision/classificacao_de_objetos_em_imagens.ipynb)
+
+6. **Estudos de Caso e Aplicação Prática**
+   - [6.1 Titanic](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/titanic/titanic.ipynb)
+   - [6.2 Dont Overfit II](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/dont_overfit_ii/dont_overfit_ii.ipynb)
+   - [6.3 Óbitos por Febre Amarela no Brasil](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/obitos_por_fa/obitos_por_fa.ipynb)
+   - [6.4 Digit Recognizer](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/digit_recognizer/digit_recognizer.ipynb)
+   - [6.5 Toxic Tweets](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/toxic_tweets/final_project.ipynb)
+   - [6.6 Detecção e Quantificação de Áreas Verdes](https://github.com/alexandre11aa/datas_and_machines/blob/main/notebooks/areas_verdes/final_project.ipynb)
+
+# Sobre
+
+*Livro desenvolvido por **Alexandre Estrela de Lacerda Nobrega**.*
+
+*Para mais informações sobre o autor acesse: <https://alexandre11aa.github.io/>.*
+
+*Para mais informações sobre o livro acesse: <https://github.com/alexandre11aa/datas_and_machines>.*
