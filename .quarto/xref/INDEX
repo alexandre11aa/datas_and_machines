@@ -1,0 +1,131 @@
+{
+  "about.qmd": {
+    "about.html": "75bf0156"
+  },
+  "index.qmd": {
+    "index.html": "84ed7e96"
+  },
+  "notebooks/studies/obitos_por_fa/obitos_por_fa.ipynb": {
+    "obitos_por_fa.html": "ee54c5b6"
+  },
+  "notebooks/studies/digit_recognizer/digit_recognizer.ipynb": {
+    "digit_recognizer.html": "515bb36e"
+  },
+  "notebooks/studies/toxic_tweets/final_project.ipynb": {
+    "final_project.html": "9a9e6a0e"
+  },
+  "notebooks/studies/areas_verdes/final_project.ipynb": {
+    "final_project.html": "5667a3b3"
+  },
+  "notebooks/studies/dont_overfit_ii/dont_overfit_ii.ipynb": {
+    "dont_overfit_ii.html": "e77c1b4d"
+  },
+  "notebooks/studies/titanic/titanic.ipynb": {
+    "titanic.html": "21aa0b49"
+  },
+  "notebooks/vision/segmentacao_de_imagens.ipynb": {
+    "segmentacao_de_imagens.html": "c5e6f2fe"
+  },
+  "notebooks/vision/classificacao_de_objetos_em_imagens.ipynb": {
+    "classificacao_de_objetos_em_imagens.html": "f625b743"
+  },
+  "notebooks/vision/realce_de_regioes_de_interesse.ipynb": {
+    "realce_de_regioes_de_interesse.html": "611f365b"
+  },
+  "notebooks/vision/deteccao_de_bordas_em_imagens.ipynb": {
+    "deteccao_de_bordas_em_imagens.html": "de0728e9"
+  },
+  "notebooks/vision/deteccao_de_espectro_de_cores.ipynb": {
+    "deteccao_de_espectro_de_cores.html": "fe6aeb89"
+  },
+  "notebooks/vision/manipulacao_e_visualizacao_de_imagem.ipynb": {
+    "manipulacao_e_visualizacao_de_imagem.html": "14776382"
+  },
+  "notebooks/unsupervised/algoritmos_de_agrupamento_hierarquico.ipynb": {
+    "algoritmos_de_agrupamento_hierarquico.html": "53e1b83e"
+  },
+  "notebooks/unsupervised/deteccao_de_anomalias_em_clusters.ipynb": {
+    "deteccao_de_anomalias_em_clusters.html": "1a7192d5"
+  },
+  "notebooks/unsupervised/agrupamento_de_dados.ipynb": {
+    "agrupamento_de_dados.html": "5c7c1726"
+  },
+  "notebooks/unsupervised/avaliacao_de_qualidade_de_agrupamento.ipynb": {
+    "avaliacao_de_qualidade_de_agrupamento.html": "a1fb6083"
+  },
+  "notebooks/unsupervised/analises_de_agrupamentos.ipynb": {
+    "analises_de_agrupamentos.html": "55baf1c5"
+  },
+  "notebooks/preprocessing/deteccao_de_colinearidade_e_multicolinearidade.ipynb": {
+    "deteccao_de_colinearidade_e_multicolinearidade.html": "17bb5322"
+  },
+  "notebooks/preprocessing/tratamento_de_valores_ausentes.ipynb": {
+    "tratamento_de_valores_ausentes.html": "0abe59ff"
+  },
+  "notebooks/preprocessing/separacao_de_dados_treinamento_validacao_teste.ipynb": {
+    "separacao_de_dados_treinamento_validacao_teste.html": "5bc7cc20"
+  },
+  "notebooks/preprocessing/substituicao_por_medidas_centrais.ipynb": {
+    "substituicao_por_medidas_centrais.html": "0f55abc1"
+  },
+  "notebooks/preprocessing/geracao_de_atributos_sinteticos.ipynb": {
+    "geracao_de_atributos_sinteticos.html": "475cb454"
+  },
+  "notebooks/preprocessing/analise_de_componentes_principais_pca.ipynb": {
+    "analise_de_componentes_principais_pca.html": "924b247d"
+  },
+  "notebooks/preprocessing/numeralizacao_de_variaveis_categoricas.ipynb": {
+    "numeralizacao_de_variaveis_categoricas.html": "e506b7e4"
+  },
+  "notebooks/preprocessing/uso_de_auto_machine_learning_para_preprocessamento.ipynb": {
+    "uso_de_auto_machine_learning_para_preprocessamento.html": "07bb6b62"
+  },
+  "notebooks/preprocessing/normalizacao_de_dados.ipynb": {
+    "normalizacao_de_dados.html": "10d44d88"
+  },
+  "notebooks/preprocessing/deteccao_e_exclusao_de_dados_duplicados.ipynb": {
+    "deteccao_e_exclusao_de_dados_duplicados.html": "d4c02116"
+  },
+  "notebooks/preprocessing/verificacao_de_normalidade_dos_dados.ipynb": {
+    "verificacao_de_normalidade_dos_dados.html": "29e8291c"
+  },
+  "notebooks/preprocessing/selecao_de_atributos_com_metodos_baseados_em_importancia.ipynb": {
+    "selecao_de_atributos_com_metodos_baseados_em_importancia.html": "54bc1f4f"
+  },
+  "notebooks/supervised/validacao_cruzada_para_modelos_supervisionados.ipynb": {
+    "validacao_cruzada_para_modelos_supervisionados.html": "b79bc20a"
+  },
+  "notebooks/supervised/treinamento_de_modelos_de_classificacao.ipynb": {
+    "treinamento_de_modelos_de_classificacao.html": "7ce9de27"
+  },
+  "notebooks/supervised/tecnicas_de_balanceamento_de_classes.ipynb": {
+    "tecnicas_de_balanceamento_de_classes.html": "4b2b4d4b"
+  },
+  "notebooks/supervised/treinamento_de_modelos_de_regressao.ipynb": {
+    "treinamento_de_modelos_de_regressao.html": "2e81a73c"
+  },
+  "notebooks/supervised/metricas_para_modelos_de_regressao_e_classificacao.ipynb": {
+    "metricas_para_modelos_de_regressao_e_classificacao.html": "0619936b"
+  },
+  "notebooks/nlp/funcoes_de_rotulagem.ipynb": {
+    "funcoes_de_rotulagem.html": "90a79149"
+  },
+  "notebooks/nlp/classificacao_de_sentimentos.ipynb": {
+    "classificacao_de_sentimentos.html": "cdeaa331"
+  },
+  "notebooks/nlp/vetorizacao_de_texto.ipynb": {
+    "vetorizacao_de_texto.html": "d2907f8d"
+  },
+  "notebooks/nlp/criacao_de_modelos_de_topicos_com_lda_e_nmf.ipynb": {
+    "criacao_de_modelos_de_topicos_com_lda_e_nmf.html": "f3570f94"
+  },
+  "notebooks/nlp/lematizacao_e_stemming.ipynb": {
+    "lematizacao_e_stemming.html": "d5bcffe7"
+  },
+  "notebooks/nlp/frequencia_e_nuvem_de_palavras.ipynb": {
+    "frequencia_e_nuvem_de_palavras.html": "261427e0"
+  },
+  "notebooks/nlp/limpeza_de_texto.ipynb": {
+    "limpeza_de_texto.html": "11d558b5"
+  }
+}
