@@ -110,6 +110,8 @@ website:
             text: 6.5 Toxic Tweets
           - href: notebooks/studies/areas_verdes/final_project.ipynb
             text: 6.6 Detecção e Quantificação de Áreas Verdes
+          - href: notebooks/studies/spatial_interpolation/spatial_interpolation.ipynb
+            text: 6.7 Métodos para Interpolação Espacial de dados de Chuva
 
 format:
   html:
